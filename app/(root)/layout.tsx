@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
+
 import { cn } from "@/utils/cn";
-import Navbar from "@/components/ui/navbar";
+import PageLayout from "@/layouts/pageLayout";
 
 import "../globals.css";
-import PromoSection from "@/components/ui/promo";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -31,11 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={cn(inter.variable, poppins.variable)}>
       <body>
-        <div className="relative">
-          <PromoSection />
-          <Navbar />
-        </div>
-        {children}
+        <PageLayout root={true}>{children}</PageLayout>
       </body>
     </html>
   );
