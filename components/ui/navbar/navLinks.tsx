@@ -1,6 +1,9 @@
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+
 import NavDropdown from "@/components/ui/navbar/navDropdown";
 import { NavLinkProps } from "@/components/ui/navbar/definition";
+import { cn } from "@/utils/cn";
 
 const links: NavLinkProps[] = [
   {
@@ -79,29 +82,25 @@ const links: NavLinkProps[] = [
 ];
 
 export default function NavLinks() {
+  const pathname = usePathname();
+
   return (
     <ul className="flex lg:justify-center lg:gap-10">
-      {links.map((link) => {
-        if (link.subLinks) {
-          return (
-            <li
-              key={link.id}
-              className="font-inter text-sm font-medium text-[#141718]"
-            >
-              <NavDropdown link={link} />
-            </li>
-          );
-        } else {
-          return (
-            <li
-              key={link.id}
-              className="font-inter text-sm font-medium text-[#141718]"
-            >
-              <Link href={link.path}>{link.name}</Link>
-            </li>
-          );
-        }
-      })}
+      {links.map((link) => (
+        <li
+          key={link.id}
+          className={cn(
+            "font-inter text-sm font-medium text-[#141718] hover:opacity-100",
+            pathname !== link.path && "opacity-70",
+          )}
+        >
+          {link.subLinks ? (
+            <NavDropdown link={link} />
+          ) : (
+            <Link href={link.path}>{link.name}</Link>
+          )}
+        </li>
+      ))}
     </ul>
   );
 }

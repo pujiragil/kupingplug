@@ -5,27 +5,52 @@ import {
   CloseIcon,
   DiscountIcon,
 } from "@/components/ui/assets/svg";
+import { useRootContext } from "@/hooks/rootContext";
 import { cn } from "@/utils/cn";
 import Link from "next/link";
 import { useState } from "react";
 
 export default function PromoSection() {
+  const isRootPage = useRootContext();
   const [showPromo, setShowPromo] = useState<boolean>(true);
 
   return (
-    <div className={cn("bg-[#141718]", !showPromo && "hidden")}>
+    <div
+      className={cn(
+        isRootPage ? "bg-[#141718]" : "bg-[#F3F5F7]",
+        !showPromo && "hidden",
+      )}
+    >
       <div className="relative mx-auto flex max-w-[1440px] justify-center px-8 py-2">
         {/* promo content */}
         <div className="flex gap-6">
           <div className="flex items-center gap-2">
-            <DiscountIcon className="h-4 w-4" />
+            <DiscountIcon
+              fill={cn(isRootPage ? "#FEFEFE" : "#141718")}
+              className="h-4 w-4 md:h-5 md:w-5 lg:h-6 lg:w-6"
+            />
 
-            <p className="flex gap-3 font-inter text-xs font-semibold text-[#FEFEFE] md:text-sm">
+            <p
+              className={cn(
+                "flex gap-3 font-inter text-xs font-semibold md:text-sm",
+                isRootPage ? "text-[#FEFEFE]" : "text-[#343839]",
+              )}
+            >
               30% off storewide — Limited time!
               <Link href="/shop">
-                <span className="hidden items-center gap-1 border-b border-[#FFAB00] font-medium text-[#FFAB00] md:flex">
+                <span
+                  className={cn(
+                    "hidden items-center gap-1 border-b font-medium md:flex",
+                    isRootPage
+                      ? "border-[#FFAB00] text-[#FFAB00]"
+                      : "border-[#377DFF] text-[#377DFF]",
+                  )}
+                >
                   Shop Now
-                  <ArrowRightIcon className="h-5 w-5" stroke="#FFAB00" />
+                  <ArrowRightIcon
+                    className="h-5 w-5"
+                    stroke={cn(isRootPage ? "#FFAB00" : "#377DFF")}
+                  />
                 </span>
               </Link>
             </p>
@@ -33,7 +58,10 @@ export default function PromoSection() {
 
           {/* close button (mobile) */}
           <button className="md:hidden" onClick={() => setShowPromo(false)}>
-            <CloseIcon className="h-4 w-4" fill="#FEFEFE" />
+            <CloseIcon
+              className="h-4 w-4"
+              fill={cn(isRootPage ? "#FEFEFE" : "#343839")}
+            />
           </button>
         </div>
 
