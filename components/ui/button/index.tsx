@@ -3,7 +3,7 @@ import { type VariantProps, cva } from "class-variance-authority";
 
 type ButtonVariantsProps = VariantProps<typeof buttonVariants>;
 
-const buttonVariants = cva("font-inter w-fit rounded-lg font-medium", {
+const buttonVariants = cva("w-fit rounded-lg font-inter font-medium", {
   variants: {
     intent: {
       primary: "bg-[#141718] text-white",
@@ -40,11 +40,11 @@ const buttonVariants = cva("font-inter w-fit rounded-lg font-medium", {
 
 interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    ButtonVariantsProps {
+  ButtonVariantsProps {
   children: React.ReactNode;
 }
 
-export const Button: React.FC<ButtonProps> = ({
+const Button: React.FC<ButtonProps> = ({
   intent,
   size,
   className,
@@ -60,3 +60,5 @@ export const Button: React.FC<ButtonProps> = ({
     </button>
   );
 };
+
+export default Button;

@@ -101,9 +101,9 @@ export default function NavMobile({
             <li>
               <Link
                 href="/cart"
-                className="flex items-center justify-between border-b border-[#E8ECEF] py-2"
+                className="flex items-center justify-between border-b border-[#E8ECEF] py-4"
               >
-                <span className="font-inter text-lg font-medium text-[#6C7275]">
+                <span className="font-inter text-sm font-medium text-[#141718]">
                   Cart
                 </span>
 
@@ -116,9 +116,9 @@ export default function NavMobile({
             <li>
               <Link
                 href="/cart"
-                className="flex items-center justify-between border-b border-[#E8ECEF] py-2"
+                className="flex items-center justify-between border-b border-[#E8ECEF] py-4"
               >
-                <span className="font-inter text-lg font-medium text-[#6C7275]">
+                <span className="font-inter text-sm font-medium text-[#141718]">
                   Wishlist
                 </span>
 
