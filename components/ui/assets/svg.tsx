@@ -1,5 +1,46 @@
 import { cn } from "@/utils/cn";
 
+export const ArrowRightIcon = ({
+  stroke,
+  className,
+}: {
+  stroke?: string;
+  className?: string;
+}) => {
+  return (
+    <svg
+      className={cn(className)}
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M4.16666 10H15.8333"
+        stroke={cn(stroke ? stroke : "#141718")}
+        strokeWidth="1.25"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M10.8333 15L15.8333 10"
+        stroke={cn(stroke ? stroke : "#141718")}
+        strokeWidth="1.25"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M10.8333 5L15.8333 10"
+        stroke={cn(stroke ? stroke : "#141718")}
+        strokeWidth="1.25"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
+
 export const DropdownIcon = ({ className }: { className?: string }) => {
   return (
     <svg
@@ -48,7 +89,13 @@ export const CartIcon = ({ className }: { className?: string }) => {
   );
 };
 
-export const CloseIcon = ({ className }: { className?: string }) => {
+export const CloseIcon = ({
+  className,
+  fill,
+}: {
+  className?: string;
+  fill?: string;
+}) => {
   return (
     <svg
       className={cn(className)}
@@ -62,7 +109,7 @@ export const CloseIcon = ({ className }: { className?: string }) => {
         fillRule="evenodd"
         clipRule="evenodd"
         d="M5.29289 5.46648C5.68342 5.07595 6.31658 5.07595 6.70711 5.46648L12 10.7594L17.2929 5.46648C17.6834 5.07595 18.3166 5.07595 18.7071 5.46648C19.0976 5.857 19.0976 6.49017 18.7071 6.88069L13.4142 12.1736L18.7071 17.4665C19.0976 17.857 19.0976 18.4902 18.7071 18.8807C18.3166 19.2712 17.6834 19.2712 17.2929 18.8807L12 13.5878L6.70711 18.8807C6.31658 19.2712 5.68342 19.2712 5.29289 18.8807C4.90237 18.4902 4.90237 17.857 5.29289 17.4665L10.5858 12.1736L5.29289 6.88069C4.90237 6.49017 4.90237 5.857 5.29289 5.46648Z"
-        fill="#6C7275"
+        fill={cn(fill ? fill : "#6C7275")}
       />
     </svg>
   );
