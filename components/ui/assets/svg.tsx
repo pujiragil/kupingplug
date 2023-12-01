@@ -200,8 +200,29 @@ export const WishlistIcon = ({ className }: { className?: string }) => {
   );
 };
 
+export const NotificationCount = ({
+  count,
+  className,
+}: {
+  count: number;
+  className?: string;
+}) => {
+  const showCount = count >= 10 ? "9+" : `${count}`;
+
+  return (
+    <span
+      className={cn(
+        "flex h-5 w-5 items-center justify-center overflow-hidden rounded-full bg-black font-inter text-[10px] font-semibold text-white",
+        className,
+      )}
+    >
+      {showCount}
+    </span>
+  );
+};
+
 // social media icon
-export const InstagramIcon = ({ className }: { className: string }) => {
+export const InstagramIcon = ({ className }: { className?: string }) => {
   return (
     <svg
       className={cn(className)}
@@ -226,7 +247,7 @@ export const InstagramIcon = ({ className }: { className: string }) => {
   );
 };
 
-export const FacebookIcon = ({ className }: { className: string }) => {
+export const FacebookIcon = ({ className }: { className?: string }) => {
   return (
     <svg
       className={cn(className)}
@@ -247,7 +268,7 @@ export const FacebookIcon = ({ className }: { className: string }) => {
   );
 };
 
-export const YoutubeIcon = ({ className }: { className: string }) => {
+export const YoutubeIcon = ({ className }: { className?: string }) => {
   return (
     <svg
       className={cn(className)}
