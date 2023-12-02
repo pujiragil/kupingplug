@@ -47,12 +47,11 @@ export default function NavMobile({
   return (
     <div
       className={cn(
-        "absolute left-0 top-0 z-10 flex h-screen w-full lg:hidden",
-        open ? "transform-none" : "-translate-x-full",
-        "transition-transform duration-100 ease-in",
+        "absolute left-0 top-0 z-10 grid h-[100dvh] w-full grid-cols-[11fr_1fr] transition-transform duration-100 ease-in md:grid-cols-[10fr_2fr] lg:hidden",
+        open ? "transform-none touch-none" : "-translate-x-full",
       )}
     >
-      <div className="flex h-full w-11/12 flex-col justify-between bg-white p-6 md:w-10/12">
+      <div className="flex h-full flex-col justify-between bg-white p-6">
         {/* top section */}
         <div className="flex flex-col gap-4">
           {/* logo */}
@@ -144,10 +143,7 @@ export default function NavMobile({
         </div>
       </div>
 
-      <div
-        className="h-full w-1/12 bg-black/30 md:w-2/12"
-        onClick={onClick}
-      ></div>
+      <div className="h-full bg-black/30" onClick={onClick}></div>
     </div>
   );
 }
