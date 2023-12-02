@@ -47,7 +47,7 @@ export default function NavMobile({
   return (
     <div
       className={cn(
-        "absolute left-0 top-0 z-10 grid h-[100dvh] w-full grid-cols-[11fr_1fr] transition-transform duration-100 ease-in md:grid-cols-[10fr_2fr] lg:hidden",
+        "absolute left-0 top-0 z-10 grid min-h-[100dvh] w-full grid-cols-[11fr_1fr] transition-transform duration-100 ease-in md:grid-cols-[10fr_2fr] lg:hidden",
         open ? "transform-none touch-none" : "-translate-x-full",
       )}
     >

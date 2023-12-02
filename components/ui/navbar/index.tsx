@@ -9,14 +9,13 @@ import {
   NotificationCount,
   SearchIcon,
   UserIcon,
-  WishlistIcon,
 } from "@/components/ui/assets/svg";
 import NavLinks from "@/components/ui/navbar/navLinks";
 import NavMobile from "@/components/ui/navbar/navMobile";
 import { useRootContext } from "@/hooks/rootContext";
 import { cn } from "@/utils/cn";
 
-interface NavbarProps { }
+interface NavbarProps {}
 
 const Navbar: React.FC<NavbarProps> = () => {
   const isRootPage = useRootContext();
