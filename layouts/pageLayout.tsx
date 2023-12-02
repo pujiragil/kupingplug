@@ -11,7 +11,7 @@ export default function PageLayout({ root, children }: PageLayoutProps) {
   return (
     <>
       <RootContextProvider root={root}>
-        <div className="relative">
+        <div className="sticky top-0">
           <PromoSection />
           <Navbar />
         </div>
