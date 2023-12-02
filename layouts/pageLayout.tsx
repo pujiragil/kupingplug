@@ -16,7 +16,7 @@ export default function PageLayout({ root, children }: PageLayoutProps) {
           <Navbar />
         </div>
       </RootContextProvider>
-      {children}
+      <main>{children}</main>
     </>
   );
 }
