@@ -70,6 +70,7 @@ export default function Slider() {
       perView: "auto",
       spacing: 16,
     },
+    renderMode: "performance",
   });
 
   return (
