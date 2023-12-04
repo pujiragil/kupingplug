@@ -2,7 +2,7 @@
 
 import { useKeenSlider } from "keen-slider/react";
 
-import { products } from "@/data/product.json";
+import products from "@/data/product.json";
 
 import "keen-slider/keen-slider.min.css";
 import ProductCard from "@/components/ui/card/productCard";
