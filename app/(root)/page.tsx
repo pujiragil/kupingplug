@@ -1,6 +1,8 @@
+import Image from "next/image";
+
 import Button from "@/components/ui/button";
 import SectionLayout from "@/layouts/sectionLayout";
-import Image from "next/image";
+import Slider from "@/app/(root)/slider";
 
 export default function Home() {
   return (
@@ -33,6 +35,16 @@ export default function Home() {
             alt="nigga-listening-music"
             className="w-full max-w-[360px] object-cover object-top lg:max-w-[420px] xl:max-w-[460px]"
           />
+        </div>
+      </SectionLayout>
+
+      <SectionLayout bg="bg-white">
+        <div className="flex flex-col gap-10 py-8 pl-8">
+          <h2 className="font-poppins text-[34px] font-medium text-black">
+            New Arrivals
+          </h2>
+
+          <Slider />
         </div>
       </SectionLayout>
     </>
