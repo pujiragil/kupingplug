@@ -3,6 +3,7 @@ import Image from "next/image";
 import Button from "@/components/ui/button";
 import SectionLayout from "@/layouts/sectionLayout";
 import Slider from "@/app/(root)/slider";
+import ProductSlider from "@/components/ui/slider/productSlider";
 
 export default function Home() {
   return (
@@ -44,7 +45,7 @@ export default function Home() {
             New Arrivals
           </h2>
 
-          <Slider />
+          <ProductSlider />
         </div>
       </SectionLayout>
     </>
