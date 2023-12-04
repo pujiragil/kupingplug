@@ -1,0 +1,84 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "image": {
+        "src": "/images/sumplekuping-1.png",
+        "alt": "sumple-kuping"
+      },
+      "rating": 5,
+      "name": "Skullcandy - Crusher anc 2 wireless headphones",
+      "price": 299
+    },
+    {
+      "id": 2,
+      "image": {
+        "src": "/images/sumplekuping-2.png",
+        "alt": "sumple-kuping"
+      },
+      "rating": 5,
+      "name": "Beats Studio Pro",
+      "price": 349
+    },
+    {
+      "id": 3,
+      "image": {
+        "src": "/images/sumplekuping-3.png",
+        "alt": "sumple-kuping"
+      },
+      "rating": 4,
+      "name": "Sony - WH-CH720N Wireless Noise Canceling",
+      "price": 149
+    },
+    {
+      "id": 4,
+      "image": {
+        "src": "/images/sumplekuping-4.png",
+        "alt": "sumple-kuping"
+      },
+      "rating": 5,
+      "name": "Skullcandy - Rail True Wireless Earbuds",
+      "price": 99
+    },
+    {
+      "id": 5,
+      "image": {
+        "src": "/images/sumplekuping-5.png",
+        "alt": "sumple-kuping"
+      },
+      "rating": 5,
+      "name": "Beats Studio Pro",
+      "price": 249
+    },
+    {
+      "id": 6,
+      "image": {
+        "src": "/images/sumplekuping-6.png",
+        "alt": "sumple-kuping"
+      },
+      "rating": 4,
+      "name": "JBL Reflect Flow Pro+ Bluetooth Truly Wireless Sports",
+      "price": 179
+    },
+    {
+      "id": 7,
+      "image": {
+        "src": "/images/sumplekuping-7.png",
+        "alt": "sumple-kuping"
+      },
+      "rating": 5,
+      "name": "Bose QuietComfort Headphones",
+      "price": 349
+    },
+    {
+      "id": 8,
+      "image": {
+        "src": "/images/sumplekuping-8.png",
+        "alt": "sumple-kuping"
+      },
+      "rating": 5,
+      "name": "AKG Y600NC Wireless",
+      "price": 249
+    }
+  ]
+}
