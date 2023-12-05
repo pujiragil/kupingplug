@@ -13,7 +13,7 @@ export default function ProductSlider() {
       perView: "auto",
       spacing: 16,
     },
-    mode: "free-snap",
+    mode: "snap",
     renderMode: "performance",
   });
 

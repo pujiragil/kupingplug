@@ -51,7 +51,7 @@ export default function ProductCard(props: ProductCardProps) {
         <Button
           intent="primary"
           size="full"
-          className="z-10 translate-y-[calc(100%+14px)] transition-transform duration-200 group-hover:translate-y-0"
+          className="z-10 translate-y-[calc(100%+20px)] transition-transform duration-200 group-hover:translate-y-0"
         >
           Add to cart
         </Button>
