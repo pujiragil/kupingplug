@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import Logo from "@/components/ui/assets/logo";
 import {
@@ -15,14 +15,30 @@ import NavMobile from "@/components/ui/navbar/navMobile";
 import { useRootContext } from "@/hooks/rootContext";
 import { cn } from "@/utils/cn";
 
-interface NavbarProps {}
+interface NavbarProps { }
 
 const Navbar: React.FC<NavbarProps> = () => {
   const isRootPage = useRootContext();
   const [open, setOpen] = useState<boolean>(false);
+  const [scroll, setScroll] = useState<boolean>(false);
+
+  const handleOnScroll = () => {
+    window.scrollY >= 40 ? setScroll(true) : setScroll(false);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleOnScroll);
+
+    return () => window.removeEventListener("scroll", handleOnScroll);
+  }, []);
 
   return (
-    <div className={cn(isRootPage ? "bg-[#ffc95c]" : "bg-white")}>
+    <div
+      className={cn(
+        isRootPage ? "bg-[#ffc95c]" : "bg-white",
+        scroll && "bg-white shadow transition-colors duration-200 ease-in",
+      )}
+    >
       <nav className="mx-auto flex max-w-[1440px] items-center justify-between px-8 py-4 lg:justify-normal">
         <div className="flex items-center gap-1 lg:basis-1/4">
           <button className="lg:hidden" onClick={() => setOpen(true)}>

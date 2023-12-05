@@ -21,8 +21,7 @@ export default function ProductSlider() {
       {products.map((product) => (
         <div
           key={product.id}
-          style={{ minWidth: 231, maxWidth: 231 }}
-          className="keen-slider__slide"
+          className="keen-slider__slide min-w-[231px] max-w-[231px]"
         >
           <ProductCard data={product} />
         </div>
