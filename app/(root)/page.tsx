@@ -1,8 +1,10 @@
+import Link from "next/link";
 import Image from "next/image";
 
 import Button from "@/components/ui/button";
 import SectionLayout from "@/layouts/sectionLayout";
 import ProductSlider from "@/components/ui/slider/productSlider";
+import { ArrowRightIcon, StarIcon } from "@/components/ui/assets/svg";
 
 export default function Home() {
   return (
@@ -38,8 +40,9 @@ export default function Home() {
         </div>
       </SectionLayout>
 
+      {/* Product slider section */}
       <SectionLayout bg="bg-white">
-        <div className="flex flex-col gap-10 py-8 pl-8">
+        <div className="space-y-10 py-8 pl-8">
           <h2 className="font-poppins text-[34px] font-medium text-black">
             New Arrivals
           </h2>
@@ -47,6 +50,148 @@ export default function Home() {
           <ProductSlider />
         </div>
       </SectionLayout>
+
+      {/* Shop collection section */}
+      <SectionLayout>
+        <div className="space-y-4 px-8 py-10 sm:space-y-8 md:space-y-12">
+          <h2 className="text-center font-poppins text-[34px] font-medium text-black md:text-left">
+            Shop Collection
+          </h2>
+
+          <div className="grid grid-cols-1 place-items-center gap-4 sm:grid-cols-2 lg:h-[560px]">
+            {/* main collection */}
+            <div className="relative aspect-[0.8/1] min-h-[377px] w-full min-w-[311px] bg-[#F3F5F7] p-8 sm:row-span-2 sm:aspect-auto sm:h-full sm:min-w-0">
+              <div className="absolute inset-0 flex h-full w-full items-center justify-center overflow-hidden">
+                <Image
+                  src="/images/sumplekuping-2.png"
+                  width={262}
+                  height={349}
+                  alt="background collection"
+                  className="aspect-[0.75/1] w-[80%] -translate-y-[10%] object-center"
+                />
+              </div>
+
+              <div className="relative flex h-full flex-col justify-end gap-2">
+                <h4 className="font-poppins text-[28px] font-medium text-[#121212]">
+                  Headband
+                </h4>
+                <Link href="/shop" className="w-fit">
+                  <span className="flex w-fit items-center gap-1 border-b border-[#121212]">
+                    Collection{" "}
+                    <ArrowRightIcon stroke="#121212" className="h-4 w-4" />
+                  </span>
+                </Link>
+              </div>
+            </div>
+
+            {/* another collection */}
+            <div className="relative aspect-[1/0.5] min-h-[180px] w-full min-w-[311px] bg-[#F3F5F7] p-8 sm:aspect-auto sm:h-full sm:min-w-0">
+              <div className="absolute inset-0 flex h-full w-full items-center justify-center overflow-hidden">
+                <Image
+                  src="/images/sumplekuping-4.png"
+                  width={262}
+                  height={349}
+                  alt="background collection"
+                  className="aspect-[0.75/1] w-[50%] translate-x-1/2"
+                />
+              </div>
+
+              <div className="relative flex h-full flex-col justify-end gap-2">
+                <h4 className="font-poppins text-[28px] font-medium text-[#121212]">
+                  Earbuds
+                </h4>
+                <Link href="/shop" className="w-fit">
+                  <span className="flex w-fit items-center gap-1 border-b border-[#121212]">
+                    Collection{" "}
+                    <ArrowRightIcon stroke="#121212" className="h-4 w-4" />
+                  </span>
+                </Link>
+              </div>
+            </div>
+
+            <div className="relative aspect-[1/0.5] min-h-[180px] w-full min-w-[311px] bg-[#F3F5F7] p-8 sm:aspect-auto sm:h-full sm:min-w-0">
+              <div className="absolute inset-0 flex h-full w-full items-center justify-center overflow-hidden">
+                <Image
+                  src="/images/sumplekuping-5.png"
+                  width={262}
+                  height={349}
+                  alt="background collection"
+                  className="aspect-[0.75/1] w-[50%] translate-x-1/2"
+                />
+              </div>
+
+              <div className="relative flex h-full flex-col justify-end gap-2">
+                <h4 className="font-poppins text-[28px] font-medium text-[#121212]">
+                  Accessories
+                </h4>
+                <Link href="/shop" className="w-fit">
+                  <span className="flex w-fit items-center gap-1 border-b border-[#121212]">
+                    Collection{" "}
+                    <ArrowRightIcon stroke="#121212" className="h-4 w-4" />
+                  </span>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </SectionLayout>
+
+      <SectionLayout>
+        <div className="space-y-4 px-8 py-10 sm:space-y-8 md:space-y-12">
+          <h2 className="text-center font-poppins text-[34px] font-medium text-black">
+            Best Seller
+          </h2>
+
+          <div className="grid grid-cols-2 gap-x-2 gap-y-4 sm:grid-cols-[repeat(auto-fill,_minmax(231px,_1fr))] sm:gap-x-4 sm:gap-y-8 lg:gap-x-6 lg:gap-y-12">
+            <BestSellerProduct />
+            <BestSellerProduct />
+            <BestSellerProduct />
+            <BestSellerProduct />
+            <BestSellerProduct />
+            <BestSellerProduct />
+            <BestSellerProduct />
+            <BestSellerProduct />
+          </div>
+        </div>
+      </SectionLayout>
     </>
+  );
+}
+
+function BestSellerProduct() {
+  return (
+    <div className="space-y-3">
+      <div className="relative aspect-[0.75/1] w-full overflow-hidden bg-[#F3F5F7]">
+        <Button className="absolute left-4 top-4 rounded bg-white px-3.5 py-1 font-inter text-base font-bold text-[#121212]">
+          HOT
+        </Button>
+
+        <Image
+          src="/images/sumplekuping-2.png"
+          width={262}
+          height={349}
+          alt="background collection"
+          className="h-auto w-full object-center"
+        />
+      </div>
+
+      <div className="space-y-1">
+        <div className="flex items-center gap-0.5">
+          <StarIcon className="h-4 w-4" />
+          <StarIcon className="h-4 w-4" />
+          <StarIcon className="h-4 w-4" />
+          <StarIcon className="h-4 w-4" />
+          <StarIcon className="h-4 w-4" />
+        </div>
+
+        <h5 className="line-clamp-1 font-inter text-sm font-semibold text-[#141718]">
+          Sony - WH-1000XM5 Wireless Noise Canceling
+        </h5>
+
+        <p className="font-inter text-sm font-semibold text-[#141718]">
+          $299.99
+        </p>
+      </div>
+    </div>
   );
 }
