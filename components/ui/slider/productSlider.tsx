@@ -1,21 +1,56 @@
 "use client";
 
-import ProductCard from "@/components/ui/card/productCard";
-import useEmblaCarousel from "embla-carousel-react";
+import { useKeenSlider } from "keen-slider/react";
+
 import products from "@/data/product.json";
 
-export default function EmblaCarousel() {
-  const [emblaRef] = useEmblaCarousel({ align: "start" });
+import "keen-slider/keen-slider.min.css";
+import ProductCard from "@/components/ui/card/productCard";
+
+export default function Slider() {
+  const [slideRef] = useKeenSlider<HTMLDivElement>({
+    slides: {
+      spacing: 8,
+      perView: 2,
+    },
+    mode: "snap",
+    breakpoints: {
+      "(min-width: 768px)": {
+        slides: {
+          perView: 3,
+          spacing: 16,
+        },
+        mode: "free-snap",
+      },
+      "(min-width: 1024px)": {
+        slides: {
+          perView: 4,
+          spacing: 16,
+        },
+        mode: "free-snap",
+      },
+      "(min-width: 1280px)": {
+        slides: {
+          perView: 5,
+          spacing: 16,
+        },
+        mode: "free-snap",
+      },
+    },
+    renderMode: "performance",
+  });
 
   return (
-    <div ref={emblaRef} className="overflow-hidden">
-      <div className="grid auto-cols-[50%] grid-flow-col gap-x-2 md:auto-cols-[33.3%] md:gap-x-4 lg:auto-cols-[25%] xl:auto-cols-[20%]">
-        {products.map((product) => (
-          <div key={product.id} className="embla__slide">
-            <ProductCard data={product} />
-          </div>
-        ))}
-      </div>
+    <div ref={slideRef} className="keen-slider">
+      {products.map((product) => (
+        <div
+          key={product.id}
+          style={{ minWidth: 231, maxWidth: 231 }}
+          className="keen-slider__slide"
+        >
+          <ProductCard data={product} />
+        </div>
+      ))}
     </div>
   );
 }
