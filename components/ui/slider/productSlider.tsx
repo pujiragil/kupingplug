@@ -1,32 +1,21 @@
 "use client";
 
-import { useKeenSlider } from "keen-slider/react";
-
+import ProductCard from "@/components/ui/card/productCard";
+import useEmblaCarousel from "embla-carousel-react";
 import products from "@/data/product.json";
 
-import "keen-slider/keen-slider.min.css";
-import ProductCard from "@/components/ui/card/productCard";
-
-export default function ProductSlider() {
-  const [slideRef] = useKeenSlider<HTMLDivElement>({
-    slides: {
-      perView: "auto",
-      spacing: 16,
-    },
-    mode: "snap",
-    renderMode: "performance",
-  });
+export default function EmblaCarousel() {
+  const [emblaRef] = useEmblaCarousel({ align: "start" });
 
   return (
-    <div ref={slideRef} className="keen-slider">
-      {products.map((product) => (
-        <div
-          key={product.id}
-          className="keen-slider__slide min-w-[231px] max-w-[231px]"
-        >
-          <ProductCard data={product} />
-        </div>
-      ))}
+    <div ref={emblaRef} className="overflow-hidden">
+      <div className="grid auto-cols-[50%] grid-flow-col gap-x-2 md:auto-cols-[33.3%] md:gap-x-4 lg:auto-cols-[25%] xl:auto-cols-[20%]">
+        {products.map((product) => (
+          <div key={product.id} className="embla__slide">
+            <ProductCard data={product} />
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

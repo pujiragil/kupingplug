@@ -42,7 +42,7 @@ export default function Home() {
 
       {/* Product slider section */}
       <SectionLayout bg="bg-white">
-        <div className="space-y-10 py-8 pl-8">
+        <div className="space-y-10 p-8">
           <h2 className="font-poppins text-[34px] font-medium text-black">
             New Arrivals
           </h2>
@@ -67,7 +67,7 @@ export default function Home() {
                   width={262}
                   height={349}
                   alt="background collection"
-                  className="aspect-[0.75/1] w-[80%] -translate-y-[10%] object-center"
+                  className="aspect-[0.75/1] w-[80%] -translate-y-[10%] object-center md:w-[60%]"
                 />
               </div>
 
@@ -92,7 +92,7 @@ export default function Home() {
                   width={262}
                   height={349}
                   alt="background collection"
-                  className="aspect-[0.75/1] w-[50%] translate-x-1/2"
+                  className="aspect-[0.75/1] w-[50%] translate-x-1/2 md:w-[40%]"
                 />
               </div>
 
@@ -116,7 +116,7 @@ export default function Home() {
                   width={262}
                   height={349}
                   alt="background collection"
-                  className="aspect-[0.75/1] w-[50%] translate-x-1/2"
+                  className="aspect-[0.75/1] w-[50%] translate-x-1/2 md:w-[40%]"
                 />
               </div>
 
@@ -142,7 +142,9 @@ export default function Home() {
             Best Seller
           </h2>
 
-          <div className="grid grid-cols-2 gap-x-2 gap-y-4 sm:grid-cols-[repeat(auto-fill,_minmax(231px,_1fr))] sm:gap-x-4 sm:gap-y-8 lg:gap-x-6 lg:gap-y-12">
+          <div className="grid grid-cols-2 gap-x-2 gap-y-4 md:grid-cols-3 lg:grid-cols-4 lg:gap-x-4 lg:gap-y-8 xl:grid-cols-5">
+            <BestSellerProduct />
+            <BestSellerProduct />
             <BestSellerProduct />
             <BestSellerProduct />
             <BestSellerProduct />
@@ -161,7 +163,7 @@ export default function Home() {
 function BestSellerProduct() {
   return (
     <div className="space-y-3">
-      <div className="relative aspect-[0.75/1] w-full overflow-hidden bg-[#F3F5F7]">
+      <div className="relative h-[308px] overflow-hidden bg-[#F3F5F7]">
         <Button className="absolute left-4 top-4 rounded bg-white px-3.5 py-1 font-inter text-base font-bold text-[#121212]">
           HOT
         </Button>
@@ -171,7 +173,7 @@ function BestSellerProduct() {
           width={262}
           height={349}
           alt="background collection"
-          className="h-auto w-full object-center"
+          className="h-full w-full object-cover"
         />
       </div>
 

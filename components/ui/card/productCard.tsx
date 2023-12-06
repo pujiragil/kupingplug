@@ -33,7 +33,7 @@ export default function ProductCard(props: ProductCardProps) {
           </span>
 
           {/* hover button wishlist  */}
-          <button className="shadow-[rgba(15, 15, 15, 0.12)] flex h-8 w-8 items-center justify-center rounded-full bg-white opacity-0 shadow-md transition-opacity duration-100 group-hover:opacity-100">
+          <button className="shadow-[rgba(15, 15, 15, 0.12)] flex h-8 w-8 items-center justify-center rounded-full bg-white opacity-0 shadow-md transition-opacity duration-100 ease-out group-hover:opacity-100">
             <WishlistIcon className="h-5 w-5" />
           </button>
         </div>
@@ -51,7 +51,7 @@ export default function ProductCard(props: ProductCardProps) {
         <Button
           intent="primary"
           size="full"
-          className="z-10 translate-y-[calc(100%+20px)] transition-transform duration-200 group-hover:translate-y-0"
+          className="z-10 translate-y-[calc(100%+20px)] transition-transform duration-200 ease-out group-hover:translate-y-0"
         >
           Add to cart
         </Button>
