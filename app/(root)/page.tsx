@@ -5,6 +5,10 @@ import Button from "@/components/ui/button";
 import SectionLayout from "@/layouts/sectionLayout";
 import ProductSlider from "@/components/ui/slider/productSlider";
 import { ArrowRightIcon, StarIcon } from "@/components/ui/assets/svg";
+import Heading from "@/components/ui/head";
+import ProductCard from "@/components/ui/card/productCard";
+
+import products from "@/data/product.json";
 
 export default function Home() {
   return (
@@ -16,10 +20,10 @@ export default function Home() {
       >
         <div className="flex flex-col items-center gap-4 p-8 sm:max-w-[600px] md:max-w-[600px] md:py-16 lg:order-2 lg:max-w-none lg:items-start lg:p-0">
           <div className="space-y-2 text-center lg:text-left">
-            <h1 className="font-poppins text-[40px] font-medium text-[#121212] md:text-6xl xl:text-7xl">
+            <Heading as="h1" intent="hero-section">
               Listen to the <span className="text-[#377DFF]">amazing</span>{" "}
               music sound.
-            </h1>
+            </Heading>
             <p className="font-inter text-base font-normal text-[#121212] md:text-lg lg:text-xl">
               Experience music like never before
             </p>
@@ -43,9 +47,13 @@ export default function Home() {
       {/* Product slider section */}
       <SectionLayout bg="bg-white">
         <div className="space-y-10 p-8">
-          <h2 className="font-poppins text-[34px] font-medium text-black">
+          <Heading
+            as="h2"
+            intent="base-section"
+            className="text-center md:text-left"
+          >
             New Arrivals
-          </h2>
+          </Heading>
 
           <ProductSlider />
         </div>
@@ -54,9 +62,13 @@ export default function Home() {
       {/* Shop collection section */}
       <SectionLayout>
         <div className="space-y-4 px-8 py-10 sm:space-y-8 md:space-y-12">
-          <h2 className="text-center font-poppins text-[34px] font-medium text-black md:text-left">
+          <Heading
+            as="h2"
+            intent="base-section"
+            className="text-center md:text-left"
+          >
             Shop Collection
-          </h2>
+          </Heading>
 
           <div className="grid grid-cols-1 place-items-center gap-4 sm:grid-cols-2 lg:h-[560px]">
             {/* main collection */}
@@ -138,62 +150,21 @@ export default function Home() {
 
       <SectionLayout>
         <div className="space-y-4 px-8 py-10 sm:space-y-8 md:space-y-12">
-          <h2 className="text-center font-poppins text-[34px] font-medium text-black">
+          <Heading
+            as="h2"
+            intent="base-section"
+            className="text-center md:text-left"
+          >
             Best Seller
-          </h2>
+          </Heading>
 
           <div className="grid grid-cols-2 gap-x-2 gap-y-4 md:grid-cols-3 lg:grid-cols-4 lg:gap-x-4 lg:gap-y-8 xl:grid-cols-5">
-            <BestSellerProduct />
-            <BestSellerProduct />
-            <BestSellerProduct />
-            <BestSellerProduct />
-            <BestSellerProduct />
-            <BestSellerProduct />
-            <BestSellerProduct />
-            <BestSellerProduct />
-            <BestSellerProduct />
-            <BestSellerProduct />
+            {products.map((product) => (
+              <ProductCard key={product.id} data={product} />
+            ))}
           </div>
         </div>
       </SectionLayout>
     </>
-  );
-}
-
-function BestSellerProduct() {
-  return (
-    <div className="space-y-3">
-      <div className="relative h-[308px] overflow-hidden bg-[#F3F5F7]">
-        <Button className="absolute left-4 top-4 rounded bg-white px-3.5 py-1 font-inter text-base font-bold text-[#121212]">
-          HOT
-        </Button>
-
-        <Image
-          src="/images/sumplekuping-2.png"
-          width={262}
-          height={349}
-          alt="background collection"
-          className="h-full w-full object-cover"
-        />
-      </div>
-
-      <div className="space-y-1">
-        <div className="flex items-center gap-0.5">
-          <StarIcon className="h-4 w-4" />
-          <StarIcon className="h-4 w-4" />
-          <StarIcon className="h-4 w-4" />
-          <StarIcon className="h-4 w-4" />
-          <StarIcon className="h-4 w-4" />
-        </div>
-
-        <h5 className="line-clamp-1 font-inter text-sm font-semibold text-[#141718]">
-          Sony - WH-1000XM5 Wireless Noise Canceling
-        </h5>
-
-        <p className="font-inter text-sm font-semibold text-[#141718]">
-          $299.99
-        </p>
-      </div>
-    </div>
   );
 }

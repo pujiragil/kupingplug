@@ -43,11 +43,7 @@ export default function Slider() {
   return (
     <div ref={slideRef} className="keen-slider">
       {products.map((product) => (
-        <div
-          key={product.id}
-          style={{ minWidth: 231, maxWidth: 231 }}
-          className="keen-slider__slide"
-        >
+        <div key={product.id} className="keen-slider__slide">
           <ProductCard data={product} />
         </div>
       ))}
