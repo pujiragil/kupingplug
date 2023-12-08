@@ -4,7 +4,7 @@ import Image from "next/image";
 import Button from "@/components/ui/button";
 import SectionLayout from "@/layouts/sectionLayout";
 import ProductSlider from "@/components/ui/slider/productSlider";
-import { ArrowRightIcon, StarIcon } from "@/components/ui/assets/svg";
+import { ArrowRightIcon } from "@/components/ui/assets/svg";
 import Heading from "@/components/ui/head";
 import ProductCard from "@/components/ui/card/productCard";
 
@@ -148,6 +148,7 @@ export default function Home() {
         </div>
       </SectionLayout>
 
+      {/* Best seller section */}
       <SectionLayout>
         <div className="space-y-4 px-8 py-10 sm:space-y-8 md:space-y-12">
           <Heading
@@ -165,6 +166,83 @@ export default function Home() {
           </div>
         </div>
       </SectionLayout>
+
+      {/* Promotion section */}
+      <div className="grid md:grid-cols-2">
+        <div className="justify-end bg-gray-400 md:flex">
+          <div className="w-full max-w-[720px] p-8">
+            Halo bang from right side
+          </div>
+        </div>
+        <div className="bg-[#ffdd99]">
+          <div className="w-full max-w-[720px] space-y-6 p-8">
+            <div className="space-y-4">
+              <p className="font-inter text-base font-bold uppercase text-[#377DFF]">
+                promotion
+              </p>
+              <Heading as="h2" intent="base-section">
+                Hurry up! 40% OFF
+              </Heading>
+              <p className="font-inter text-sm font-normal text-black/90">
+                Thousands of high tech are waiting for you
+              </p>
+            </div>
+            <div className="space-y-3">
+              <p className="font-inter text-base font-normal text-black/90">
+                Offer expires in:
+              </p>
+              <div className="flex gap-4">
+                <div className="w-fit">
+                  <div className="flex h-[60px] w-[60px] items-center justify-center bg-white">
+                    <p className="font-poppins text-[34px] font-medium text-black/90">
+                      02
+                    </p>
+                  </div>
+                  <p className="text-center font-inter text-xs font-normal text-black/90">
+                    Days
+                  </p>
+                </div>
+
+                <div className="w-fit">
+                  <div className="flex h-[60px] w-[60px] items-center justify-center bg-white">
+                    <p className="font-poppins text-[34px] font-medium text-black/90">
+                      12
+                    </p>
+                  </div>
+                  <p className="text-center font-inter text-xs font-normal text-black/90">
+                    Hours
+                  </p>
+                </div>
+
+                <div className="w-fit">
+                  <div className="flex h-[60px] w-[60px] items-center justify-center bg-white">
+                    <p className="font-poppins text-[34px] font-medium text-black/90">
+                      45
+                    </p>
+                  </div>
+                  <p className="text-center font-inter text-xs font-normal text-black/90">
+                    Minutes
+                  </p>
+                </div>
+
+                <div className="w-fit">
+                  <div className="flex h-[60px] w-[60px] items-center justify-center bg-white">
+                    <p className="font-poppins text-[34px] font-medium text-black/90">
+                      05
+                    </p>
+                  </div>
+                  <p className="text-center font-inter text-xs font-normal text-black/90">
+                    Seconds
+                  </p>
+                </div>
+              </div>
+            </div>
+            <Button intent="primary" size="md">
+              Shop now
+            </Button>
+          </div>
+        </div>
+      </div>
     </>
   );
 }
