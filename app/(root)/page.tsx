@@ -168,13 +168,18 @@ export default function Home() {
       </SectionLayout>
 
       {/* Promotion section */}
-      <div className="grid md:grid-cols-2">
-        <div className="justify-end bg-gray-400 md:flex">
-          <div className="w-full max-w-[720px] p-8">
-            Halo bang from right side
-          </div>
+      <div className="grid overflow-hidden md:grid-cols-2 lg:h-full lg:max-h-[500px] lg:place-items-center">
+        <div className="w-full justify-end bg-gray-400 md:flex">
+          <Image
+            src="/images/promotion-card.png"
+            width={1250}
+            height={1080}
+            alt="promotion-card"
+            className="h-auto w-full object-cover lg:w-[460px]"
+          />
         </div>
-        <div className="bg-[#ffdd99]">
+
+        <div className="order-1 w-full bg-[#ffdd99] md:order-2">
           <div className="w-full max-w-[720px] space-y-6 p-8">
             <div className="space-y-4">
               <p className="font-inter text-base font-bold uppercase text-[#377DFF]">
