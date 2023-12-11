@@ -3,8 +3,12 @@ import { cn } from "@/utils/cn";
 
 type TextVariantsProps = VariantProps<typeof textVariants>;
 
-const textVariants = cva("font-inter", {
+const textVariants = cva("", {
   variants: {
+    family: {
+      inter: "font-inter",
+      poppins: "font-poppins",
+    },
     size: {
       xs: "text-xs",
       sm: "text-sm",
@@ -12,6 +16,7 @@ const textVariants = cva("font-inter", {
       lg: "text-lg",
       xl: "text-xl",
       "2xl": "text-2xl",
+      "3xl": "text-[34px]",
     },
     weight: {
       400: "font-normal",
@@ -30,9 +35,12 @@ const textVariants = cva("font-inter", {
       white: "text-white",
       "white/900": "text-[#FEFEFE]",
       "white/800": "text-[#E8ECEF]",
+      gray: "text-[#6C7275]",
+      blue: "text-[#377DFF]",
     },
   },
   defaultVariants: {
+    family: "inter",
     size: "base",
     weight: 400,
     color: "black/900",
@@ -40,12 +48,13 @@ const textVariants = cva("font-inter", {
 });
 
 interface TextProps
-  extends Omit<React.HTMLProps<HTMLParagraphElement>, "color" | "size">,
-  TextVariantsProps { }
+  extends TextVariantsProps,
+  Omit<React.HTMLProps<HTMLParagraphElement>, "color" | "size"> { }
 
 const Text: React.FC<TextProps> = ({
   size,
   weight,
+  family,
   color,
   transform,
   className,
@@ -54,7 +63,7 @@ const Text: React.FC<TextProps> = ({
   return (
     <p
       className={cn(
-        textVariants({ size, weight, color, transform, className }),
+        textVariants({ size, weight, family, color, transform, className }),
       )}
       {...props}
     />

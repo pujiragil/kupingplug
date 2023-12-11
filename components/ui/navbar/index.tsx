@@ -1,21 +1,27 @@
 "use client";
 
+// package
 import { useEffect, useState } from "react";
 
-import Logo from "@/components/ui/assets/logo";
+// ui
+import Logo from "@/ui/assets/logo";
 import {
   CartIcon,
   HamburgerMenu,
   NotificationCount,
   SearchIcon,
   UserIcon,
-} from "@/components/ui/assets/svg";
-import NavLinks from "@/components/ui/navbar/navLinks";
-import NavMobile from "@/components/ui/navbar/navMobile";
+} from "@/ui/assets/svg";
+import NavLinks from "@/ui/navbar/navLinks";
+import NavMobile from "@/ui/navbar/navMobile";
+
+// hooks
 import { useRootContext } from "@/hooks/rootContext";
+
+// utils
 import { cn } from "@/utils/cn";
 
-interface NavbarProps { }
+interface NavbarProps {}
 
 const Navbar: React.FC<NavbarProps> = () => {
   const isRootPage = useRootContext();

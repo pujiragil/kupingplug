@@ -194,63 +194,76 @@ export default function Home() {
         <div className="order-1 w-full bg-[#ffdd99] md:order-2">
           <div className="w-full max-w-[720px] space-y-6 p-8">
             <div className="space-y-4">
-              <p className="font-inter text-base font-bold uppercase text-[#377DFF]">
+              <Text weight={700} transform="uppercase" color="blue">
                 promotion
-              </p>
+              </Text>
               <Heading as="h2" intent="base-section">
                 Hurry up! 40% OFF
               </Heading>
-              <p className="font-inter text-sm font-normal text-black/90">
-                Thousands of high tech are waiting for you
-              </p>
+              <Text size="sm">Thousands of high tech are waiting for you</Text>
             </div>
             <div className="space-y-3">
-              <p className="font-inter text-base font-normal text-black/90">
-                Offer expires in:
-              </p>
+              <Text>Offer expires in:</Text>
               <div className="flex gap-4">
                 <div className="w-fit">
                   <div className="flex h-[60px] w-[60px] items-center justify-center bg-white">
-                    <p className="font-poppins text-[34px] font-medium text-black/90">
+                    <Text
+                      size="3xl"
+                      weight={500}
+                      family="poppins"
+                      color="black/800"
+                    >
                       02
-                    </p>
+                    </Text>
                   </div>
-                  <p className="text-center font-inter text-xs font-normal text-black/90">
+                  <Text size="xs" color="black/800" className="text-center">
                     Days
-                  </p>
+                  </Text>
                 </div>
-
                 <div className="w-fit">
                   <div className="flex h-[60px] w-[60px] items-center justify-center bg-white">
-                    <p className="font-poppins text-[34px] font-medium text-black/90">
+                    <Text
+                      size="3xl"
+                      weight={500}
+                      family="poppins"
+                      color="black/800"
+                    >
                       12
-                    </p>
+                    </Text>
                   </div>
-                  <p className="text-center font-inter text-xs font-normal text-black/90">
+                  <Text size="xs" color="black/800" className="text-center">
                     Hours
-                  </p>
+                  </Text>
                 </div>
-
                 <div className="w-fit">
                   <div className="flex h-[60px] w-[60px] items-center justify-center bg-white">
-                    <p className="font-poppins text-[34px] font-medium text-black/90">
+                    <Text
+                      size="3xl"
+                      weight={500}
+                      family="poppins"
+                      color="black/800"
+                    >
                       45
-                    </p>
+                    </Text>
                   </div>
-                  <p className="text-center font-inter text-xs font-normal text-black/90">
+                  <Text size="xs" color="black/800" className="text-center">
                     Minutes
-                  </p>
+                  </Text>
                 </div>
-
                 <div className="w-fit">
                   <div className="flex h-[60px] w-[60px] items-center justify-center bg-white">
-                    <p className="font-poppins text-[34px] font-medium text-black/90">
+                    <Text
+                      size="3xl"
+                      weight={500}
+                      family="poppins"
+                      color="black/800"
+                    >
                       05
-                    </p>
+                    </Text>
                   </div>
-                  <p className="text-center font-inter text-xs font-normal text-black/90">
+                  <Text size="xs" color="black/800" className="text-center">
                     Seconds
-                  </p>
+                  </Text>
                 </div>
               </div>
             </div>
@@ -267,45 +280,69 @@ export default function Home() {
           <div className="space-y-4 bg-[#F3F5F7] px-4 py-8 lg:px-8 lg:py-12">
             <DeliveryIcon className="h-12 w-12" />
             <div className="space-y-1 md:space-y-2">
-              <p className="font-inter text-sm font-semibold text-[#141718] lg:text-[20px]">
+              <Text
+                size="sm"
+                weight={600}
+                family="poppins"
+                color="black/800"
+                className="lg:text-xl"
+              >
                 Free Shipping
-              </p>
-              <p className="font-inter text-sm font-normal text-[#6C7275]">
+              </Text>
+              <Text size="sm" color="gray">
                 Order above $200
-              </p>
+              </Text>
             </div>
           </div>
           <div className="space-y-4 bg-[#F3F5F7] px-4 py-8 lg:px-8 lg:py-12">
             <MoneyIcon className="h-12 w-12" />
             <div className="space-y-1 md:space-y-2">
-              <p className="font-inter text-sm font-semibold text-[#141718] lg:text-[20px]">
+              <Text
+                size="sm"
+                weight={600}
+                family="poppins"
+                color="black/800"
+                className="lg:text-xl"
+              >
                 Money-back
-              </p>
-              <p className="font-inter text-sm font-normal text-[#6C7275]">
+              </Text>
+              <Text size="sm" color="gray">
                 30 days guarantee
-              </p>
+              </Text>
             </div>
           </div>
           <div className="space-y-4 bg-[#F3F5F7] px-4 py-8 lg:px-8 lg:py-12">
             <LockIcon className="h-12 w-12" />
             <div className="space-y-1 md:space-y-2">
-              <p className="font-inter text-sm font-semibold text-[#141718] lg:text-[20px]">
+              <Text
+                size="sm"
+                weight={600}
+                family="poppins"
+                color="black/800"
+                className="lg:text-xl"
+              >
                 Secure Payments
-              </p>
-              <p className="font-inter text-sm font-normal text-[#6C7275]">
-                Secured by Stripe
-              </p>
+              </Text>
+              <Text size="sm" color="gray">
+                Secured by Striped
+              </Text>
             </div>
           </div>
           <div className="space-y-4 bg-[#F3F5F7] px-4 py-8 lg:px-8 lg:py-12">
             <CallIcon className="h-12 w-12" />
             <div className="space-y-1 md:space-y-2">
-              <p className="font-inter text-sm font-semibold text-[#141718] lg:text-[20px]">
+              <Text
+                size="sm"
+                weight={600}
+                family="poppins"
+                color="black/800"
+                className="lg:text-xl"
+              >
                 24/7 Support
-              </p>
-              <p className="font-inter text-sm font-normal text-[#6C7275]">
+              </Text>
+              <Text size="sm" color="gray">
                 Phone and Email support
-              </p>
+              </Text>
             </div>
           </div>
         </div>
@@ -315,18 +352,18 @@ export default function Home() {
       <SectionLayout>
         <div className="space-y-10 px-8 py-10">
           <div className="space-y-4 text-center">
-            <p className="font-inter text-base font-bold uppercase text-[#6C7275]">
+            <Text weight={700} transform="uppercase" color="gray">
               newsfeed
-            </p>
+            </Text>
             <Heading as="h2" intent="base-section">
               Instagram
             </Heading>
-            <p className="font-inter text-sm font-normal text-[#121212]">
+            <Text size="sm">
               Follow us on social media for more discount & promotions
-            </p>
-            <p className="font-poppins text-[20px] font-medium text-[#6C7275]">
+            </Text>
+            <Text size="xl" weight={500} family="poppins" color="gray">
               @kupingplug_official
-            </p>
+            </Text>
           </div>
         </div>
       </SectionLayout>

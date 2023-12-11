@@ -1,10 +1,12 @@
+// package
 import Link from "next/link";
+
+// layouts
 import SectionLayout from "@/layouts/sectionLayout";
-import {
-  FacebookIcon,
-  InstagramIcon,
-  YoutubeIcon,
-} from "@/components/ui/assets/svg";
+
+// ui
+import Text from "@/ui/text";
+import { FacebookIcon, InstagramIcon, YoutubeIcon } from "@/ui/assets/svg";
 
 const Footer = () => {
   return (
@@ -13,12 +15,12 @@ const Footer = () => {
         <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between lg:gap-0">
           <div className="flex flex-col items-center gap-4 lg:flex-row lg:gap-0">
             <h3 className="font-poppins text-2xl font-medium text-white lg:border-r lg:border-[#6C7275] lg:pr-8">
-              Kupingplug
+              Kupingplug<span className="text-[#6C7275]">.</span>
             </h3>
             <span className="h-[1px] w-8 rounded-full bg-[#6C7275] lg:hidden"></span>
-            <p className="font-inter text-sm font-normal text-[#FEFEFE] lg:pl-8">
+            <Text size="sm" color="white/900" className="lg:pl-8">
               Headphone Store
-            </p>
+            </Text>
           </div>
 
           <ul className="flex flex-col gap-8 lg:flex-row lg:gap-10">
@@ -53,17 +55,22 @@ const Footer = () => {
 
           <div className="flex flex-col gap-7 lg:order-1 lg:flex-row">
             <div className="flex justify-center gap-7 lg:order-2">
-              <p className="font-poppins text-xs font-semibold text-[#FEFEFE]">
+              <Text size="xs" weight={600} family="poppins" color="white/900">
                 Privacy Policy
-              </p>
-              <p className="font-poppins text-xs font-semibold text-[#FEFEFE]">
+              </Text>
+              <Text size="xs" weight={600} family="poppins" color="white/900">
                 Term of Use
-              </p>
+              </Text>
             </div>
 
-            <p className="text-center font-poppins text-xs font-normal text-[#FEFEFE] lg:order-1">
+            <Text
+              family="poppins"
+              size="xs"
+              color="white/800"
+              className="text-center lg:order-1 lg:text-left"
+            >
               Copyright © 2023 Kupingplug. All rights reserved
-            </p>
+            </Text>
           </div>
         </div>
       </div>

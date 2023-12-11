@@ -1,11 +1,16 @@
 "use client";
 
+// package
 import { useKeenSlider } from "keen-slider/react";
 
+// ui
+import ProductCard from "@/ui/card/productCard";
+
+// data
 import products from "@/data/product.json";
 
+// css
 import "keen-slider/keen-slider.min.css";
-import ProductCard from "@/components/ui/card/productCard";
 
 export default function Slider() {
   const [slideRef] = useKeenSlider<HTMLDivElement>({

@@ -1,8 +1,12 @@
+// package
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import NavDropdown from "@/components/ui/navbar/navDropdown";
-import { NavLinkProps } from "@/components/ui/navbar/definition";
+// ui
+import NavDropdown from "@/ui/navbar/navDropdown";
+import { NavLinkProps } from "@/ui/navbar/definition";
+
+// utils
 import { cn } from "@/utils/cn";
 
 const links: NavLinkProps[] = [

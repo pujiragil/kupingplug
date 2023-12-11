@@ -1,6 +1,9 @@
-import { cn } from "@/utils/cn";
+// package
+import Link from "next/link";
 
-import Logo from "@/components/ui/assets/logo";
+// ui
+import Logo from "@/ui/assets/logo";
+import Button from "@/ui/button";
 import {
   CartIcon,
   CloseIcon,
@@ -10,9 +13,10 @@ import {
   SearchIcon,
   WishlistIcon,
   YoutubeIcon,
-} from "@/components/ui/assets/svg";
-import Button from "@/components/ui/button";
-import Link from "next/link";
+} from "@/ui/assets/svg";
+
+// utils
+import { cn } from "@/utils/cn";
 
 const links = [
   {

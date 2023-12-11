@@ -1,5 +1,9 @@
-import Navbar from "@/components/ui/navbar";
-import PromoSection from "@/components/ui/promo";
+// ui
+import PromoSection from "@/ui/promo";
+import Navbar from "@/ui/navbar";
+import Footer from "@/ui/footer";
+
+// hooks
 import { RootContextProvider } from "@/hooks/rootContext";
 
 interface PageLayoutProps {
@@ -17,6 +21,7 @@ export default function PageLayout({ root, children }: PageLayoutProps) {
         </div>
       </RootContextProvider>
       <main>{children}</main>
+      <Footer />
     </>
   );
 }

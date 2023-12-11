@@ -1,14 +1,17 @@
 "use client";
 
-import {
-  ArrowRightIcon,
-  CloseIcon,
-  DiscountIcon,
-} from "@/components/ui/assets/svg";
-import { useRootContext } from "@/hooks/rootContext";
-import { cn } from "@/utils/cn";
-import Link from "next/link";
+// package
 import { useState } from "react";
+import Link from "next/link";
+
+// ui
+import { ArrowRightIcon, CloseIcon, DiscountIcon } from "@/ui/assets/svg";
+
+// hooks
+import { useRootContext } from "@/hooks/rootContext";
+
+// utils
+import { cn } from "@/utils/cn";
 
 export default function PromoSection() {
   const isRootPage = useRootContext();

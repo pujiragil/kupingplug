@@ -1,10 +1,10 @@
-import Link from "next/link";
-import {
-  NavDropdownProps,
-  SubLinkProps,
-} from "@/components/ui/navbar/definition";
-import { DropdownIcon } from "@/components/ui/assets/svg";
+// package
 import { useState } from "react";
+import Link from "next/link";
+
+// ui
+import { NavDropdownProps, SubLinkProps } from "@/ui/navbar/definition";
+import { DropdownIcon } from "@/ui/assets/svg";
 
 export default function NavDropdown({ link }: { link: NavDropdownProps }) {
   const [dropdown, setDropdown] = useState<boolean>(false);

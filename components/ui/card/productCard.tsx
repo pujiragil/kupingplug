@@ -1,7 +1,12 @@
+// package
 import Image from "next/image";
 
-import Button from "@/components/ui/button";
-import { WishlistIcon, StarIcon } from "@/components/ui/assets/svg";
+// ui
+import Button from "@/ui/button";
+import { WishlistIcon, StarIcon } from "@/ui/assets/svg";
+import Text from "@/ui/text";
+
+// utils
 import { formatCurrency } from "@/utils/formatCurrency";
 import { formatRating } from "@/utils/formatRating";
 
@@ -65,13 +70,12 @@ export default function ProductCard(props: ProductCardProps) {
           ))}
         </div>
 
-        <h4 className="line-clamp-2 font-inter text-base font-semibold text-[#141718]">
+        <Text weight={600} color="black/800" className="line-clamp-2">
           {product.name}
-        </h4>
-
-        <p className="font-inter text-sm font-semibold text-[#121212]">
+        </Text>
+        <Text size="sm" weight={600} color="black/800">
           {productPrice}
-        </p>
+        </Text>
       </div>
     </div>
   );

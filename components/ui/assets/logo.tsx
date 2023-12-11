@@ -1,7 +1,9 @@
+import Text from "@/ui/text";
+
 export default function Logo() {
   return (
-    <p className="font-poppins text-base font-medium text-black md:text-xl lg:text-2xl">
+    <Text family="poppins" weight={500} className="md:text-xl lg:text-2xl">
       Kupingplug<span className="text-[#6C7275]">.</span>
-    </p>
+    </Text>
   );
 }
