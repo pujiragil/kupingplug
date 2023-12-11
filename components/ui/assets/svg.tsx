@@ -1,11 +1,14 @@
 import { cn } from "@/utils/cn";
 
-export const ArrowRightIcon = ({
+export type SVGComponentProps = {
+  className?: string;
+  stroke?: string;
+  fill?: string;
+};
+
+export const ArrowRightIcon: React.FC<SVGComponentProps> = ({
   stroke,
   className,
-}: {
-  stroke?: string;
-  className?: string;
 }) => {
   return (
     <svg
@@ -41,7 +44,10 @@ export const ArrowRightIcon = ({
   );
 };
 
-export const DropdownIcon = ({ className }: { className?: string }) => {
+export const DropdownIcon: React.FC<SVGComponentProps> = ({
+  className,
+  stroke,
+}) => {
   return (
     <svg
       className={cn(className)}
@@ -53,7 +59,7 @@ export const DropdownIcon = ({ className }: { className?: string }) => {
     >
       <path
         d="M6.27246 9L12.2725 15L18.2725 9"
-        stroke="#141718"
+        stroke={cn(stroke ? stroke : "#141718")}
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -62,7 +68,33 @@ export const DropdownIcon = ({ className }: { className?: string }) => {
   );
 };
 
-export const CartIcon = ({ className }: { className?: string }) => {
+export const CallIcon: React.FC<SVGComponentProps> = ({
+  stroke,
+  className,
+}) => {
+  return (
+    <svg
+      width="48"
+      height="48"
+      viewBox="0 0 48 48"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={cn(className)}
+    >
+      <path
+        d="M42 38V34.7081C42 33.0725 41.0042 31.6017 39.4856 30.9942L35.4173 29.3669C33.4857 28.5943 31.2844 29.4312 30.354 31.292L30 32C30 32 25 31 21 27C17 23 16 18 16 18L16.708 17.646C18.5688 16.7156 19.4057 14.5143 18.6331 12.5827L17.0058 8.51444C16.3983 6.99581 14.9275 6 13.2919 6H10C7.79086 6 6 7.79086 6 10C6 27.6731 20.3269 42 38 42C40.2091 42 42 40.2091 42 38Z"
+        stroke={cn(stroke ? stroke : "#141718")}
+        strokeWidth="2.5"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
+
+export const CartIcon: React.FC<SVGComponentProps> = ({
+  stroke,
+  className,
+}) => {
   return (
     <svg
       className={cn(className)}
@@ -74,14 +106,14 @@ export const CartIcon = ({ className }: { className?: string }) => {
     >
       <path
         d="M9 6L9 7C9 8.65685 10.3431 10 12 10C13.6569 10 15 8.65685 15 7V6"
-        stroke="#141718"
+        stroke={cn(stroke ? stroke : "#141718")}
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M15.6115 3H8.38848C6.43313 3 4.76436 4.41365 4.44291 6.3424L2.77624 16.3424C2.36988 18.7805 4.25006 21 6.72182 21H17.2781C19.7499 21 21.6301 18.7805 21.2237 16.3424L19.557 6.3424C19.2356 4.41365 17.5668 3 15.6115 3Z"
-        stroke="#141718"
+        stroke={cn(stroke ? stroke : "#141718")}
         strokeWidth="1.5"
         strokeLinejoin="round"
       />
@@ -89,13 +121,7 @@ export const CartIcon = ({ className }: { className?: string }) => {
   );
 };
 
-export const CloseIcon = ({
-  className,
-  fill,
-}: {
-  className?: string;
-  fill?: string;
-}) => {
+export const CloseIcon: React.FC<SVGComponentProps> = ({ className, fill }) => {
   return (
     <svg
       className={cn(className)}
@@ -115,7 +141,10 @@ export const CloseIcon = ({
   );
 };
 
-export const DeliveryIcon = ({ className }: { className?: string }) => {
+export const DeliveryIcon: React.FC<SVGComponentProps> = ({
+  stroke,
+  className,
+}) => {
   return (
     <svg
       className={cn(className)}
@@ -127,19 +156,19 @@ export const DeliveryIcon = ({ className }: { className?: string }) => {
     >
       <path
         d="M14 19V7M14 19H16M14 19H9M14 7C14 4.79086 12.2091 3 10 3H6C3.79086 3 2 4.79086 2 7V15C2 16.8652 3.27667 18.4323 5.00384 18.875M14 7H17.2091C17.7172 7 18.2063 7.1934 18.577 7.54093L21.3679 10.1574C21.7712 10.5355 22 11.0636 22 11.6165V17C22 18.1046 21.1046 19 20 19M20 19C20 20.1046 19.1046 21 18 21C16.8954 21 16 20.1046 16 19M20 19C20 17.8954 19.1046 17 18 17C16.8954 17 16 17.8954 16 19M9 19C9 20.1046 8.10457 21 7 21C5.89543 21 5 20.1046 5 19C5 18.958 5.00129 18.9163 5.00384 18.875M9 19C9 17.8954 8.10457 17 7 17C5.93742 17 5.06838 17.8286 5.00384 18.875"
-        stroke="#141718"
+        stroke={cn(stroke ? stroke : "#141718")}
         strokeWidth="1.5"
       />
       <path
         d="M10 8L8 8"
-        stroke="#141718"
+        stroke={cn(stroke ? stroke : "#141718")}
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M10 12L6 12"
-        stroke="#141718"
+        stroke={cn(stroke ? stroke : "#141718")}
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -148,12 +177,9 @@ export const DeliveryIcon = ({ className }: { className?: string }) => {
   );
 };
 
-export const DiscountIcon = ({
+export const DiscountIcon: React.FC<SVGComponentProps> = ({
   fill,
   className,
-}: {
-  fill?: string;
-  className?: string;
 }) => {
   return (
     <svg
@@ -172,7 +198,10 @@ export const DiscountIcon = ({
   );
 };
 
-export const HamburgerMenu = ({ className }: { className?: string }) => {
+export const HamburgerMenu: React.FC<SVGComponentProps> = ({
+  stroke,
+  className,
+}) => {
   return (
     <svg
       className={cn(className)}
@@ -184,7 +213,7 @@ export const HamburgerMenu = ({ className }: { className?: string }) => {
     >
       <path
         d="M7 8H17M7 12H17M7 16H17"
-        stroke="#141718"
+        stroke={cn(stroke ? stroke : "#141718")}
         strokeWidth="1.5"
         strokeLinecap="round"
       />
@@ -192,7 +221,30 @@ export const HamburgerMenu = ({ className }: { className?: string }) => {
   );
 };
 
-export const StarIcon = ({ className }: { className?: string }) => {
+export const LockIcon: React.FC<SVGComponentProps> = ({
+  stroke,
+  className,
+}) => {
+  return (
+    <svg
+      width="48"
+      height="48"
+      viewBox="0 0 48 48"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={cn(className)}
+    >
+      <path
+        d="M32 16H16M32 16C36.4183 16 40 19.5817 40 24V36C40 40.4183 36.4183 44 32 44H16C11.5817 44 8 40.4183 8 36V24C8 19.5817 11.5817 16 16 16M32 16V12C32 7.58172 28.4183 4 24 4C19.5817 4 16 7.58172 16 12V16M24 32V28"
+        stroke={cn(stroke ? stroke : "#141718")}
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+};
+
+export const StarIcon: React.FC<SVGComponentProps> = ({ fill, className }) => {
   return (
     <svg
       className={cn(className)}
@@ -204,13 +256,16 @@ export const StarIcon = ({ className }: { className?: string }) => {
     >
       <path
         d="M7.53834 2.00376C7.70914 1.59312 8.29086 1.59312 8.46166 2.00376L9.99874 5.69936C10.0707 5.87247 10.2336 5.99076 10.4204 6.00574L14.4102 6.3256C14.8535 6.36114 15.0332 6.91439 14.6955 7.20373L11.6557 9.80758C11.5133 9.92956 11.4512 10.1209 11.4947 10.3033L12.4234 14.1966C12.5265 14.6292 12.0559 14.9711 11.6764 14.7393L8.26063 12.653C8.10062 12.5553 7.89938 12.5553 7.73937 12.653L4.32363 14.7393C3.94408 14.9711 3.47345 14.6292 3.57665 14.1966L4.50534 10.3033C4.54884 10.1209 4.48665 9.92956 4.34426 9.80758L1.30453 7.20373C0.966758 6.91439 1.14652 6.36114 1.58985 6.3256L5.57955 6.00574C5.76645 5.99076 5.92925 5.87247 6.00126 5.69936L7.53834 2.00376Z"
-        fill="#343839"
+        fill={cn(fill ? fill : "#343839")}
       />
     </svg>
   );
 };
 
-export const SearchIcon = ({ className }: { className?: string }) => {
+export const SearchIcon: React.FC<SVGComponentProps> = ({
+  stroke,
+  className,
+}) => {
   return (
     <svg
       className={cn(className)}
@@ -222,7 +277,7 @@ export const SearchIcon = ({ className }: { className?: string }) => {
     >
       <path
         d="M18.5 18.5L22 22M21 11.5C21 6.25329 16.7467 2 11.5 2C6.25329 2 2 6.25329 2 11.5C2 16.7467 6.25329 21 11.5 21C16.7467 21 21 16.7467 21 11.5Z"
-        stroke="#141718"
+        stroke={cn(stroke ? stroke : "#141718")}
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -231,7 +286,10 @@ export const SearchIcon = ({ className }: { className?: string }) => {
   );
 };
 
-export const UserIcon = ({ className }: { className?: string }) => {
+export const UserIcon: React.FC<SVGComponentProps> = ({
+  stroke,
+  className,
+}) => {
   return (
     <svg
       className={cn(className)}
@@ -243,7 +301,7 @@ export const UserIcon = ({ className }: { className?: string }) => {
     >
       <path
         d="M18.5588 19.5488C17.5654 16.8918 15.0036 15 12 15C8.99638 15 6.4346 16.8918 5.44117 19.5488M18.5588 19.5488C20.6672 17.7154 22 15.0134 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 15.0134 3.33285 17.7154 5.44117 19.5488M18.5588 19.5488C16.8031 21.0756 14.5095 22 12 22C9.49052 22 7.19694 21.0756 5.44117 19.5488M15 9C15 10.6569 13.6569 12 12 12C10.3431 12 9 10.6569 9 9C9 7.34315 10.3431 6 12 6C13.6569 6 15 7.34315 15 9Z"
-        stroke="#141718"
+        stroke={cn(stroke ? stroke : "#141718")}
         strokeWidth="1.5"
         strokeLinejoin="round"
       />
@@ -251,7 +309,10 @@ export const UserIcon = ({ className }: { className?: string }) => {
   );
 };
 
-export const WishlistIcon = ({ className }: { className?: string }) => {
+export const WishlistIcon: React.FC<SVGComponentProps> = ({
+  fill,
+  className,
+}) => {
   return (
     <svg
       className={cn(className)}
@@ -265,7 +326,56 @@ export const WishlistIcon = ({ className }: { className?: string }) => {
         fillRule="evenodd"
         clipRule="evenodd"
         d="M12.6924 6.91706C12.3055 7.28838 11.6945 7.28838 11.3076 6.91706L10.6152 6.2526C9.80477 5.47487 8.70994 5 7.5 5C5.01472 5 3 7.01472 3 9.5C3 11.8826 4.28979 13.8501 6.15176 15.4666C8.01532 17.0844 10.2434 18.1574 11.5746 18.7051C11.853 18.8196 12.147 18.8196 12.4254 18.7051C13.7566 18.1574 15.9847 17.0844 17.8482 15.4666C19.7102 13.85 21 11.8826 21 9.5C21 7.01472 18.9853 5 16.5 5C15.2901 5 14.1952 5.47487 13.3848 6.2526L12.6924 6.91706ZM12 4.80957C10.8321 3.6888 9.24649 3 7.5 3C3.91015 3 1 5.91015 1 9.5C1 15.8683 7.97034 19.385 10.8138 20.5547C11.5796 20.8697 12.4204 20.8697 13.1862 20.5547C16.0297 19.385 23 15.8682 23 9.5C23 5.91015 20.0899 3 16.5 3C14.7535 3 13.1679 3.6888 12 4.80957Z"
-        fill="#141718"
+        fill={cn(fill ? fill : "#141718")}
+      />
+    </svg>
+  );
+};
+
+export const MoneyIcon: React.FC<SVGComponentProps> = ({
+  fill,
+  stroke,
+  className,
+}) => {
+  return (
+    <svg
+      width="48"
+      height="48"
+      viewBox="0 0 48 48"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={cn(className)}
+    >
+      <rect
+        x="4"
+        y="8"
+        width="40"
+        height="32"
+        rx="4"
+        stroke={cn(stroke ? stroke : "#141718")}
+        strokeWidth="2.5"
+      />
+      <circle
+        cx="4"
+        cy="4"
+        r="4"
+        transform="matrix(1 0 0 -1 20 28)"
+        stroke={cn(stroke ? stroke : "#141718")}
+        strokeWidth="2.5"
+      />
+      <circle
+        cx="2"
+        cy="2"
+        r="2"
+        transform="matrix(1 0 0 -1 34 26)"
+        fill={cn(fill ? fill : "#141718")}
+      />
+      <circle
+        cx="2"
+        cy="2"
+        r="2"
+        transform="matrix(1 0 0 -1 10 26)"
+        fill={cn(fill ? fill : "#141718")}
       />
     </svg>
   );
@@ -293,7 +403,11 @@ export const NotificationCount = ({
 };
 
 // social media icon
-export const InstagramIcon = ({ className }: { className?: string }) => {
+export const InstagramIcon: React.FC<SVGComponentProps> = ({
+  fill,
+  stroke,
+  className,
+}) => {
   return (
     <svg
       className={cn(className)}
@@ -309,16 +423,25 @@ export const InstagramIcon = ({ className }: { className?: string }) => {
         width="20"
         height="20"
         rx="4"
-        stroke="#141718"
+        stroke={cn(stroke ? stroke : "#141718")}
         strokeWidth="1.5"
       />
-      <circle cx="18" cy="6" r="1" fill="#141718" />
-      <circle cx="12" cy="12" r="5" stroke="#141718" strokeWidth="1.5" />
+      <circle cx="18" cy="6" r="1" fill={cn(fill ? fill : "#141718")} />
+      <circle
+        cx="12"
+        cy="12"
+        r="5"
+        stroke={cn(stroke ? stroke : "#141718")}
+        strokeWidth="1.5"
+      />
     </svg>
   );
 };
 
-export const FacebookIcon = ({ className }: { className?: string }) => {
+export const FacebookIcon: React.FC<SVGComponentProps> = ({
+  stroke,
+  className,
+}) => {
   return (
     <svg
       className={cn(className)}
@@ -330,7 +453,7 @@ export const FacebookIcon = ({ className }: { className?: string }) => {
     >
       <path
         d="M18 3H15C12.2386 3 10 5.23858 10 8V10H6V14H10V21H14V14H18V10H14V8C14 7.44772 14.4477 7 15 7H18V3Z"
-        stroke="#141718"
+        stroke={cn(stroke ? stroke : "#141718")}
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -339,7 +462,10 @@ export const FacebookIcon = ({ className }: { className?: string }) => {
   );
 };
 
-export const YoutubeIcon = ({ className }: { className?: string }) => {
+export const YoutubeIcon: React.FC<SVGComponentProps> = ({
+  stroke,
+  className,
+}) => {
   return (
     <svg
       className={cn(className)}
@@ -355,12 +481,12 @@ export const YoutubeIcon = ({ className }: { className?: string }) => {
         width="20"
         height="18"
         rx="4"
-        stroke="#141718"
+        stroke={cn(stroke ? stroke : "#141718")}
         strokeWidth="1.5"
       />
       <path
         d="M10.4472 8.72361L15.2111 11.1056C15.9482 11.4741 15.9482 12.5259 15.2111 12.8944L10.4472 15.2764C9.78231 15.6088 9 15.1253 9 14.382V9.61803C9 8.87465 9.78231 8.39116 10.4472 8.72361Z"
-        stroke="#141718"
+        stroke={cn(stroke ? stroke : "#141718")}
         strokeWidth="1.5"
         strokeLinecap="round"
       />
