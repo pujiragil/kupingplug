@@ -1,13 +1,25 @@
+// package
 import Link from "next/link";
 import Image from "next/image";
 
-import Button from "@/components/ui/button";
+// layouts
 import SectionLayout from "@/layouts/sectionLayout";
-import ProductSlider from "@/components/ui/slider/productSlider";
-import { ArrowRightIcon } from "@/components/ui/assets/svg";
-import Heading from "@/components/ui/head";
-import ProductCard from "@/components/ui/card/productCard";
 
+// ui
+import Button from "@/ui/button";
+import ProductSlider from "@/ui/slider/productSlider";
+import Heading from "@/ui/head";
+import ProductCard from "@/ui/card/productCard";
+import Text from "@/ui/text";
+import {
+  ArrowRightIcon,
+  CallIcon,
+  DeliveryIcon,
+  LockIcon,
+  MoneyIcon,
+} from "@/ui/assets/svg";
+
+// data
 import products from "@/data/product.json";
 
 export default function Home() {
@@ -24,9 +36,9 @@ export default function Home() {
               Listen to the <span className="text-[#377DFF]">amazing</span>{" "}
               music sound.
             </Heading>
-            <p className="font-inter text-base font-normal text-[#121212] md:text-lg lg:text-xl">
+            <Text className="md:text-lg lg:text-xl">
               Experience music like never before
-            </p>
+            </Text>
           </div>
           <Button intent="primary" size="lg">
             Shopping Now
@@ -45,7 +57,7 @@ export default function Home() {
       </SectionLayout>
 
       {/* Product slider section */}
-      <SectionLayout bg="bg-white">
+      <SectionLayout>
         <div className="space-y-10 p-8">
           <Heading
             as="h2"
@@ -150,7 +162,7 @@ export default function Home() {
 
       {/* Best seller section */}
       <SectionLayout>
-        <div className="space-y-4 px-8 py-10 sm:space-y-8 md:space-y-12">
+        <div className="space-y-4 px-8 py-10 sm:space-y-8 md:space-y-12 lg:pb-24">
           <Heading
             as="h2"
             intent="base-section"
@@ -248,6 +260,76 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      {/* Features section */}
+      <SectionLayout>
+        <div className="grid grid-cols-2 gap-x-2 gap-y-6 p-8 md:grid-cols-4 lg:gap-6 lg:py-10">
+          <div className="space-y-4 bg-[#F3F5F7] px-4 py-8 lg:px-8 lg:py-12">
+            <DeliveryIcon className="h-12 w-12" />
+            <div className="space-y-1 md:space-y-2">
+              <p className="font-inter text-sm font-semibold text-[#141718] lg:text-[20px]">
+                Free Shipping
+              </p>
+              <p className="font-inter text-sm font-normal text-[#6C7275]">
+                Order above $200
+              </p>
+            </div>
+          </div>
+          <div className="space-y-4 bg-[#F3F5F7] px-4 py-8 lg:px-8 lg:py-12">
+            <MoneyIcon className="h-12 w-12" />
+            <div className="space-y-1 md:space-y-2">
+              <p className="font-inter text-sm font-semibold text-[#141718] lg:text-[20px]">
+                Money-back
+              </p>
+              <p className="font-inter text-sm font-normal text-[#6C7275]">
+                30 days guarantee
+              </p>
+            </div>
+          </div>
+          <div className="space-y-4 bg-[#F3F5F7] px-4 py-8 lg:px-8 lg:py-12">
+            <LockIcon className="h-12 w-12" />
+            <div className="space-y-1 md:space-y-2">
+              <p className="font-inter text-sm font-semibold text-[#141718] lg:text-[20px]">
+                Secure Payments
+              </p>
+              <p className="font-inter text-sm font-normal text-[#6C7275]">
+                Secured by Stripe
+              </p>
+            </div>
+          </div>
+          <div className="space-y-4 bg-[#F3F5F7] px-4 py-8 lg:px-8 lg:py-12">
+            <CallIcon className="h-12 w-12" />
+            <div className="space-y-1 md:space-y-2">
+              <p className="font-inter text-sm font-semibold text-[#141718] lg:text-[20px]">
+                24/7 Support
+              </p>
+              <p className="font-inter text-sm font-normal text-[#6C7275]">
+                Phone and Email support
+              </p>
+            </div>
+          </div>
+        </div>
+      </SectionLayout>
+
+      {/* Newsfeed section */}
+      <SectionLayout>
+        <div className="space-y-10 px-8 py-10">
+          <div className="space-y-4 text-center">
+            <p className="font-inter text-base font-bold uppercase text-[#6C7275]">
+              newsfeed
+            </p>
+            <Heading as="h2" intent="base-section">
+              Instagram
+            </Heading>
+            <p className="font-inter text-sm font-normal text-[#121212]">
+              Follow us on social media for more discount & promotions
+            </p>
+            <p className="font-poppins text-[20px] font-medium text-[#6C7275]">
+              @kupingplug_official
+            </p>
+          </div>
+        </div>
+      </SectionLayout>
     </>
   );
 }
