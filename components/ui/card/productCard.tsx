@@ -70,7 +70,7 @@ export default function ProductCard(props: ProductCardProps) {
           ))}
         </div>
 
-        <Text weight={600} color="black/800" className="line-clamp-2">
+        <Text weight={600} color="black/800" className="line-clamp-1">
           {product.name}
         </Text>
         <Text size="sm" weight={600} color="black/800">

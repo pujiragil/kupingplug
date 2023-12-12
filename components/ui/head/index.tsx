@@ -4,11 +4,12 @@ import { VariantProps, cva } from "class-variance-authority";
 
 type HeadingVariantsProps = VariantProps<typeof headingVariants>;
 
-const headingVariants = cva("font-poppins font-medium text-black/90", {
+const headingVariants = cva("font-poppins font-medium text-[#121212]", {
   variants: {
     intent: {
       "hero-section": "text-[40px] md:text-6xl xl:text-7xl",
       "base-section": "text-[34px] md:text-[40px]",
+      "collection-card": "text-[28px] md:text-[34px]",
     },
   },
   defaultVariants: {
