@@ -25,11 +25,12 @@ import products from "@/data/product.json";
 export default function Home() {
   return (
     <>
-      {/* main section */}
+      {/* Hero section */}
       <SectionLayout
         bg="bg-[#ffc95c]"
         className="flex flex-col items-center justify-between lg:grid lg:grid-cols-2 lg:pt-8"
       >
+        {/* Text content */}
         <div className="flex flex-col items-center gap-4 p-8 sm:max-w-[600px] md:max-w-[600px] md:py-16 lg:order-2 lg:max-w-none lg:items-start lg:p-0">
           <div className="space-y-2 text-center lg:text-left">
             <Heading as="h1" intent="hero-section">
@@ -45,6 +46,7 @@ export default function Home() {
           </Button>
         </div>
 
+        {/* Image content */}
         <div className="flex h-auto w-full items-end justify-center overflow-hidden lg:order-1">
           <Image
             src="/images/main.png"
@@ -56,7 +58,7 @@ export default function Home() {
         </div>
       </SectionLayout>
 
-      {/* Product slider section */}
+      {/* Product section */}
       <SectionLayout>
         <div className="space-y-10 p-8">
           <Heading
@@ -67,6 +69,7 @@ export default function Home() {
             New Arrivals
           </Heading>
 
+          {/* Product slider */}
           <ProductSlider />
         </div>
       </SectionLayout>
@@ -83,7 +86,7 @@ export default function Home() {
           </Heading>
 
           <div className="grid grid-cols-1 place-items-center gap-4 sm:grid-cols-2 lg:h-[560px]">
-            {/* main collection */}
+            {/* Main collection */}
             <div className="relative aspect-[0.8/1] min-h-[377px] w-full min-w-[311px] bg-[#F3F5F7] p-8 sm:row-span-2 sm:aspect-auto sm:h-full sm:min-w-0">
               <div className="absolute inset-0 flex h-full w-full items-center justify-center overflow-hidden">
                 <Image
@@ -96,9 +99,9 @@ export default function Home() {
               </div>
 
               <div className="relative flex h-full flex-col justify-end gap-2">
-                <h4 className="font-poppins text-[28px] font-medium text-[#121212]">
+                <Heading as="h3" intent="collection-card">
                   Headband
-                </h4>
+                </Heading>
                 <Link href="/shop" className="w-fit">
                   <span className="flex w-fit items-center gap-1 border-b border-[#121212]">
                     Collection{" "}
@@ -108,7 +111,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* another collection */}
+            {/* Another collection */}
             <div className="relative aspect-[1/0.5] min-h-[180px] w-full min-w-[311px] bg-[#F3F5F7] p-8 sm:aspect-auto sm:h-full sm:min-w-0">
               <div className="absolute inset-0 flex h-full w-full items-center justify-center overflow-hidden">
                 <Image
@@ -121,9 +124,9 @@ export default function Home() {
               </div>
 
               <div className="relative flex h-full flex-col justify-end gap-2">
-                <h4 className="font-poppins text-[28px] font-medium text-[#121212]">
+                <Heading as="h3" intent="collection-card">
                   Earbuds
-                </h4>
+                </Heading>
                 <Link href="/shop" className="w-fit">
                   <span className="flex w-fit items-center gap-1 border-b border-[#121212]">
                     Collection{" "}
@@ -133,6 +136,7 @@ export default function Home() {
               </div>
             </div>
 
+            {/* Another collection */}
             <div className="relative aspect-[1/0.5] min-h-[180px] w-full min-w-[311px] bg-[#F3F5F7] p-8 sm:aspect-auto sm:h-full sm:min-w-0">
               <div className="absolute inset-0 flex h-full w-full items-center justify-center overflow-hidden">
                 <Image
@@ -145,9 +149,9 @@ export default function Home() {
               </div>
 
               <div className="relative flex h-full flex-col justify-end gap-2">
-                <h4 className="font-poppins text-[28px] font-medium text-[#121212]">
+                <Heading as="h3" intent="collection-card">
                   Accessories
-                </h4>
+                </Heading>
                 <Link href="/shop" className="w-fit">
                   <span className="flex w-fit items-center gap-1 border-b border-[#121212]">
                     Collection{" "}
