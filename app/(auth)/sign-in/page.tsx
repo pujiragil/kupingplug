@@ -56,7 +56,7 @@ export default function Page() {
                 Sign In
               </h1>
               <Text weight={400} color="gray">
-                Don't have an account yet?{" "}
+                Don&apos;t have an account yet?{" "}
                 <span className="font-semibold text-[#38CB89] hover:underline">
                   <Link href="/sign-up">Sign Up</Link>
                 </span>
@@ -80,10 +80,17 @@ export default function Page() {
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <div className="h-6 w-6 rounded-md border border-[#6C7275]"></div>
-                  <Text color="gray">Remember me</Text>
+                  <Text color="gray" size="xs" className="md:text-sm">
+                    Remember me
+                  </Text>
                 </div>
 
-                <Text weight={600} color="black/800">
+                <Text
+                  weight={600}
+                  size="xs"
+                  color="black/800"
+                  className="md:text-sm"
+                >
                   Forgot password?
                 </Text>
               </div>

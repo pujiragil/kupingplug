@@ -93,7 +93,12 @@ export default function Page() {
               </div>
               <div className="flex items-center gap-3">
                 <div className="h-6 w-6 rounded-md border border-[#6C7275]"></div>
-                <Text size="xs" weight={400} color="gray">
+                <Text
+                  size="xs"
+                  weight={400}
+                  color="gray"
+                  className="md:text-sm"
+                >
                   I agree with{" "}
                   <span className="font-semibold text-[#141718]">
                     Privacy Policy
