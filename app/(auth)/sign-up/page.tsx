@@ -6,6 +6,9 @@ import Image from "next/image";
 import Text from "@/ui/text";
 import Button from "@/ui/button";
 
+// form
+import Input from "@/form/input";
+
 // utils
 import { cn } from "@/utils/cn";
 
@@ -16,13 +19,12 @@ export default function Page() {
         className={cn([
           "grid lg:grid-cols-2",
           "max-w-[1440px]",
-          "overflow-hidden",
           "lg:rounded-lg lg:shadow-2xl",
           "lg:max-h-[720px]",
           "lg:absolute lg:inset-0 lg:m-auto",
         ])}
       >
-        <div className="relative flex items-center justify-center bg-[#F3F5F7] p-8 pt-20 lg:h-full">
+        <div className="relative flex items-center justify-center bg-[#F3F5F7] p-8 pt-20 lg:h-full lg:rounded-l-lg">
           <Text
             family="poppins"
             size="2xl"
@@ -42,7 +44,7 @@ export default function Page() {
           />
         </div>
 
-        <div className="flex justify-center bg-white">
+        <div className="flex justify-center bg-white lg:rounded-r-lg">
           <div
             className={cn([
               "w-full",
@@ -63,31 +65,23 @@ export default function Page() {
               </Text>
             </div>
             <div className="space-y-8">
-              <div className="border-b border-[#E8ECEF] pb-2">
-                <input
-                  type="text"
-                  className="font-inter text-base font-normal text-[#6C7275] outline-none placeholder:text-[#6C7275] placeholder:opacity-100"
-                  placeholder="Your name"
-                />
+              <div className="border-b border-[#E8ECEF] pb-2 focus-within:border-[#141718]">
+                <Input intent="secondary" type="text" placeholder="Your name" />
               </div>
-              <div className="border-b border-[#E8ECEF] pb-2">
-                <input
-                  type="text"
-                  className="font-inter text-base font-normal text-[#6C7275] outline-none placeholder:text-[#6C7275] placeholder:opacity-100"
-                  placeholder="Username"
-                />
+              <div className="border-b border-[#E8ECEF] pb-2 focus-within:border-[#141718]">
+                <Input intent="secondary" type="text" placeholder="Username" />
               </div>
-              <div className="border-b border-[#E8ECEF] pb-2">
-                <input
+              <div className="border-b border-[#E8ECEF] pb-2 focus-within:border-[#141718]">
+                <Input
+                  intent="secondary"
                   type="email"
-                  className="font-inter text-base font-normal text-[#6C7275] outline-none placeholder:text-[#6C7275] placeholder:opacity-100"
                   placeholder="Email address"
                 />
               </div>
-              <div className="border-b border-[#E8ECEF] pb-2">
-                <input
+              <div className="border-b border-[#E8ECEF] pb-2 focus-within:border-[#141718]">
+                <Input
+                  intent="secondary"
                   type="password"
-                  className="font-inter text-base font-normal text-[#6C7275] outline-none placeholder:text-[#6C7275] placeholder:opacity-100"
                   placeholder="Password"
                 />
               </div>

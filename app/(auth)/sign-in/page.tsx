@@ -6,6 +6,9 @@ import Image from "next/image";
 import Text from "@/ui/text";
 import Button from "@/ui/button";
 
+// form
+import Input from "@/form/input";
+
 // utils
 import { cn } from "@/utils/cn";
 
@@ -63,17 +66,17 @@ export default function Page() {
               </Text>
             </div>
             <div className="space-y-8">
-              <div className="border-b border-[#E8ECEF] pb-2">
-                <input
+              <div className="border-b border-[#E8ECEF] pb-2 focus-within:border-[#141718]">
+                <Input
+                  intent="secondary"
                   type="email"
-                  className="font-inter text-base font-normal text-[#6C7275] outline-none placeholder:text-[#6C7275] placeholder:opacity-100"
                   placeholder="Email address"
                 />
               </div>
-              <div className="border-b border-[#E8ECEF] pb-2">
-                <input
+              <div className="border-b border-[#E8ECEF] pb-2 focus-within:border-[#141718]">
+                <Input
+                  intent="secondary"
                   type="password"
-                  className="font-inter text-base font-normal text-[#6C7275] outline-none placeholder:text-[#6C7275] placeholder:opacity-100"
                   placeholder="Password"
                 />
               </div>
