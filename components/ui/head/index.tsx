@@ -10,6 +10,7 @@ const headingVariants = cva("font-poppins font-medium text-[#121212]", {
       "hero-section": "text-[40px] md:text-6xl xl:text-7xl",
       "base-section": "text-[34px] md:text-[40px]",
       "collection-card": "text-[28px] md:text-[34px]",
+      "shop-page": "text-[40px] lg:text-[54px]",
     },
   },
   defaultVariants: {
@@ -19,7 +20,7 @@ const headingVariants = cva("font-poppins font-medium text-[#121212]", {
 
 export interface HeadingProps
   extends React.HTMLAttributes<HTMLHeadingElement>,
-    HeadingVariantsProps {
+  HeadingVariantsProps {
   as: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 }
 
