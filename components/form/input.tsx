@@ -1,8 +1,8 @@
 //package
 import { type VariantProps, cva } from "class-variance-authority";
 
-// utils
-import { cn } from "@/utils/cn";
+// lib
+import { cn } from "@/lib/utils";
 
 type InputVariantsProps = VariantProps<typeof inputVariants>;
 

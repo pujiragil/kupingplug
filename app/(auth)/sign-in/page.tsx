@@ -9,8 +9,8 @@ import Button from "@/ui/button";
 // form
 import Input from "@/form/input";
 
-// utils
-import { cn } from "@/utils/cn";
+// lib
+import { cn } from "@/lib/utils";
 
 export default function Page() {
   return (

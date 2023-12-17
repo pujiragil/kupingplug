@@ -1,4 +1,5 @@
-import { cn } from "@/utils/cn";
+// lib
+import { cn } from "@/lib/utils";
 
 export type SVGComponentProps = {
   className?: string;

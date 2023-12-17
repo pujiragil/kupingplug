@@ -1,8 +1,11 @@
+// package
 import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 
-import { cn } from "@/utils/cn";
+// lib
+import { cn } from "@/lib/utils";
 
+// css
 import "./globals.css";
 
 const poppins = Poppins({

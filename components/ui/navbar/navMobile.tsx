@@ -15,8 +15,8 @@ import {
   YoutubeIcon,
 } from "@/ui/assets/svg";
 
-// utils
-import { cn } from "@/utils/cn";
+// lib
+import { cn } from "@/lib/utils";
 
 const links = [
   {

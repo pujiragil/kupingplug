@@ -6,8 +6,8 @@ import { usePathname } from "next/navigation";
 import NavDropdown from "@/ui/navbar/navDropdown";
 import { NavLinkProps } from "@/ui/navbar/definition";
 
-// utils
-import { cn } from "@/utils/cn";
+// lib
+import { cn } from "@/lib/utils";
 
 const links: NavLinkProps[] = [
   {

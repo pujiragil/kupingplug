@@ -1,5 +1,8 @@
+// package
 import { cva, type VariantProps } from "class-variance-authority";
-import { cn } from "@/utils/cn";
+
+// lib
+import { cn } from "@/lib/utils";
 
 type TextVariantsProps = VariantProps<typeof textVariants>;
 
@@ -49,7 +52,7 @@ const textVariants = cva("", {
 
 interface TextProps
   extends TextVariantsProps,
-  Omit<React.HTMLProps<HTMLParagraphElement>, "color" | "size"> { }
+    Omit<React.HTMLProps<HTMLParagraphElement>, "color" | "size"> {}
 
 const Text: React.FC<TextProps> = ({
   size,

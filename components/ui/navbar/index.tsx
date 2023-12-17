@@ -18,8 +18,8 @@ import NavMobile from "@/ui/navbar/navMobile";
 // hooks
 import { useRootContext } from "@/hooks/rootContext";
 
-// utils
-import { cn } from "@/utils/cn";
+// lib
+import { cn } from "@/lib/utils";
 
 interface NavbarProps {}
 

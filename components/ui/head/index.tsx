@@ -1,6 +1,9 @@
+// package
 import React from "react";
-import { cn } from "@/utils/cn";
 import { VariantProps, cva } from "class-variance-authority";
+
+// lib
+import { cn } from "@/lib/utils";
 
 type HeadingVariantsProps = VariantProps<typeof headingVariants>;
 
@@ -20,7 +23,7 @@ const headingVariants = cva("font-poppins font-medium text-[#121212]", {
 
 export interface HeadingProps
   extends React.HTMLAttributes<HTMLHeadingElement>,
-  HeadingVariantsProps {
+    HeadingVariantsProps {
   as: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 }
 

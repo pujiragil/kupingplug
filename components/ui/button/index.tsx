@@ -1,5 +1,8 @@
-import { cn } from "@/utils/cn";
+// package
 import { type VariantProps, cva } from "class-variance-authority";
+
+// lib
+import { cn } from "@/lib/utils";
 
 type ButtonVariantsProps = VariantProps<typeof buttonVariants>;
 
@@ -40,7 +43,7 @@ const buttonVariants = cva("w-fit rounded-lg font-inter font-medium", {
 
 interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-  ButtonVariantsProps {
+    ButtonVariantsProps {
   children: React.ReactNode;
 }
 

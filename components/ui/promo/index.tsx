@@ -10,8 +10,8 @@ import { ArrowRightIcon, CloseIcon, DiscountIcon } from "@/ui/assets/svg";
 // hooks
 import { useRootContext } from "@/hooks/rootContext";
 
-// utils
-import { cn } from "@/utils/cn";
+// lib
+import { cn } from "@/lib/utils";
 
 export default function PromoSection() {
   const isRootPage = useRootContext();

@@ -6,9 +6,9 @@ import Button from "@/ui/button";
 import { WishlistIcon, StarIcon } from "@/ui/assets/svg";
 import Text from "@/ui/text";
 
-// utils
-import { formatCurrency } from "@/utils/formatCurrency";
-import { formatRating } from "@/utils/formatRating";
+// lib
+import { formatCurrency } from "@/lib/utils";
+import { formatRating } from "@/lib/utils";
 
 interface ProductCardProps {
   data: {
@@ -33,7 +33,7 @@ export default function ProductCard(props: ProductCardProps) {
       {/* card image */}
       <div className="group relative flex h-[308px] flex-col justify-between overflow-hidden bg-[#F3F5F7] p-3.5">
         <div className="z-10 flex items-start justify-between">
-          <span className="rounded-[4px] bg-white px-3.5 py-1 font-inter text-base font-bold text-[#121212]">
+          <span className="font-inter rounded-[4px] bg-white px-3.5 py-1 text-base font-bold text-[#121212]">
             NEW
           </span>
 
