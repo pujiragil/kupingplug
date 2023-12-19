@@ -146,11 +146,11 @@ export default function Page() {
           </Text>
         </div>
 
-        <div className="flex flex-col gap-8 py-8 lg:flex-row lg:items-end lg:justify-between">
+        <div className="grid gap-8 py-8 lg:grid-cols-[2fr_1fr_2fr] lg:items-end lg:gap-4">
           {/* filter select menu */}
-          <div className="flex flex-col gap-6 md:flex-row lg:items-center">
+          <div className="flex flex-col gap-6 md:flex-row lg:col-span-1 lg:items-center lg:gap-4">
             {/* categories */}
-            <div className="w-full space-y-2 lg:min-w-[260px]">
+            <div className="w-full space-y-2">
               <Text size="sm" weight={600} color="gray" transform="uppercase">
                 categories
               </Text>
@@ -196,7 +196,7 @@ export default function Page() {
               </Select>
             </div>
             {/* price */}
-            <div className="w-full space-y-2 lg:min-w-[260px]">
+            <div className="w-full space-y-2">
               <Text size="sm" weight={600} color="gray" transform="uppercase">
                 price
               </Text>
@@ -242,7 +242,8 @@ export default function Page() {
               </Select>
             </div>
           </div>
-          <div className="flex items-center justify-between border-y border-[#EAEAEA] py-2 lg:justify-normal lg:gap-8 lg:border-y-0 lg:py-0">
+
+          <div className="flex items-center justify-between border-y border-[#EAEAEA] py-2 lg:col-start-3 lg:justify-end lg:gap-8 lg:border-y-0 lg:py-0">
             {/* sort by */}
             <Select>
               <SelectTrigger
@@ -250,6 +251,8 @@ export default function Page() {
                   "h-auto",
                   "max-w-[120px] md:max-w-[150px]",
                   "gap-1",
+                  "justify-start",
+                  "lg:justify-end",
                   "border-none outline-none",
                   "p-0",
                   "font-inter font-semibold",
