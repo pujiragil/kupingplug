@@ -1,3 +1,6 @@
+// packages
+import { ChevronDown } from "lucide-react";
+
 // layouts
 import SectionLayout from "@/layouts/sectionLayout";
 
@@ -9,6 +12,112 @@ import { DropdownIcon } from "@/ui/assets/svg";
 
 // data
 import products from "@/data/product.json";
+
+// ui
+import {
+  Select,
+  SelectContent,
+  SelectIcon,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/ui/select";
+
+// lib
+import { cn } from "@/lib/utils";
+
+const categories = [
+  {
+    value: "all-headphones",
+    text: "All Headphones",
+  },
+  {
+    value: "tws",
+    text: "TWS",
+  },
+  {
+    value: "headset",
+    text: "Headset",
+  },
+  {
+    value: "gaming-headset",
+    text: "Gaming Headset",
+  },
+  {
+    value: "earbud",
+    text: "Earbud",
+  },
+];
+
+const prices = [
+  {
+    value: "all-price",
+    text: "All Price",
+  },
+  {
+    value: "0-100",
+    text: "$0.00 - $100.00",
+  },
+  {
+    value: "100-200",
+    text: "$100.00 - $200.00",
+  },
+  {
+    value: "200-300",
+    text: "$200.00 - $300.00",
+  },
+  {
+    value: "300-400",
+    text: "$300.00 - $400.00",
+  },
+  {
+    value: "400+",
+    text: "$400.00 +",
+  },
+];
+
+const sorts = [
+  {
+    value: "related-products",
+    text: "Related Products",
+  },
+  {
+    value: "price-low-to-high",
+    text: "Price Low to High",
+  },
+  {
+    value: "price-high-to-low",
+    text: "Price High to Low",
+  },
+  {
+    value: "newest-products",
+    text: "Newest Products",
+  },
+  {
+    value: "best-ratings",
+    text: "Best Ratings",
+  },
+  {
+    value: "largest-discount",
+    text: "Largest Discount",
+  },
+  {
+    value: "most-viewed",
+    text: "Most Viewed",
+  },
+  {
+    value: "best-sellers",
+    text: "Best Sellers",
+  },
+  {
+    value: "most-reviews",
+    text: "Most Reviews",
+  },
+  {
+    value: "available-stock",
+    text: "Available Stock",
+  },
+];
 
 export default function Page() {
   return (
@@ -38,40 +147,145 @@ export default function Page() {
         </div>
 
         <div className="flex flex-col gap-8 py-8 lg:flex-row lg:items-end lg:justify-between">
-          <div className="flex flex-col gap-6 lg:flex-row lg:items-center">
-            <div className="space-y-2">
+          {/* filter select menu */}
+          <div className="flex flex-col gap-6 md:flex-row lg:items-center">
+            {/* categories */}
+            <div className="w-full space-y-2 lg:min-w-[260px]">
               <Text size="sm" weight={600} color="gray" transform="uppercase">
                 categories
               </Text>
-              <div className="flex items-center justify-between rounded-lg border-2 border-[#6C7275] px-4 py-2">
-                <Text size="sm" weight={600} color="black/800">
-                  Living Room
-                </Text>
-                <DropdownIcon stroke="#6C7275" className="h-6 w-6" />
-              </div>
+
+              <Select defaultValue={categories[0].value}>
+                <SelectTrigger
+                  className={cn(
+                    "h-auto",
+                    "rounded-lg",
+                    "border-2 border-[#6C7275]",
+                    "p-2 pl-4",
+                    "font-inter font-semibold",
+                    "text-sm text-[#141718]",
+                    "focus:ring-0 focus:ring-offset-0",
+                  )}
+                >
+                  <SelectValue />
+
+                  <SelectIcon asChild>
+                    <ChevronDown color="#6C7275" className="h-6 w-6" />
+                  </SelectIcon>
+                </SelectTrigger>
+
+                <SelectContent className="rounded-xl">
+                  {categories.map((category) => (
+                    <SelectItem
+                      key={category.value}
+                      value={category.value}
+                      className={cn(
+                        "cursor-pointer",
+                        "rounded-lg",
+                        "p-2",
+                        "font-inter font-normal",
+                        "text-sm text-[#6C7275]",
+                        "focus:bg-[#F3F5F7] focus:text-[#141718]",
+                        "data-[state=checked]:font-semibold data-[state=checked]:text-[#141718]",
+                      )}
+                    >
+                      {category.text}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
             </div>
-            <div className="space-y-2">
+            {/* price */}
+            <div className="w-full space-y-2 lg:min-w-[260px]">
               <Text size="sm" weight={600} color="gray" transform="uppercase">
                 price
               </Text>
-              <div className="flex items-center justify-between rounded-lg border-2 border-[#6C7275] px-4 py-2">
-                <Text size="sm" weight={600} color="black/800">
-                  All Price
-                </Text>
-                <DropdownIcon stroke="#6C7275" className="h-6 w-6" />
-              </div>
+
+              <Select defaultValue={prices[0].value}>
+                <SelectTrigger
+                  className={cn(
+                    "h-auto",
+                    "rounded-lg",
+                    "border-2 border-[#6C7275]",
+                    "p-2 pl-4",
+                    "font-inter font-semibold",
+                    "text-sm text-[#141718]",
+                    "focus:ring-0 focus:ring-offset-0",
+                  )}
+                >
+                  <SelectValue />
+
+                  <SelectIcon asChild>
+                    <ChevronDown color="#6C7275" className="h-6 w-6" />
+                  </SelectIcon>
+                </SelectTrigger>
+
+                <SelectContent className="rounded-xl">
+                  {prices.map((category) => (
+                    <SelectItem
+                      key={category.value}
+                      value={category.value}
+                      className={cn(
+                        "cursor-pointer",
+                        "rounded-lg",
+                        "p-2",
+                        "font-inter font-normal",
+                        "text-sm text-[#6C7275]",
+                        "focus:bg-[#F3F5F7] focus:text-[#141718]",
+                        "data-[state=checked]:font-semibold data-[state=checked]:text-[#141718]",
+                      )}
+                    >
+                      {category.text}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
             </div>
           </div>
           <div className="flex items-center justify-between border-y border-[#EAEAEA] py-2 lg:justify-normal lg:gap-8 lg:border-y-0 lg:py-0">
-            <Text
-              size="sm"
-              weight={600}
-              color="black/800"
-              className="flex items-center gap-1"
-            >
-              Sort by <DropdownIcon stroke="#121212" className="h-5 w-5" />
-            </Text>
+            {/* sort by */}
+            <Select>
+              <SelectTrigger
+                className={cn(
+                  "h-auto",
+                  "max-w-[120px] md:max-w-[150px]",
+                  "gap-1",
+                  "border-none outline-none",
+                  "p-0",
+                  "font-inter font-semibold",
+                  "text-sm text-[#121212]",
+                  "focus:ring-0 focus:ring-offset-0",
+                )}
+              >
+                <SelectValue placeholder="sort by" />
 
+                <SelectIcon asChild>
+                  <ChevronDown color="#121212" className="h-5 w-5" />
+                </SelectIcon>
+              </SelectTrigger>
+
+              <SelectContent className="w-[200px] rounded-xl">
+                {sorts.map((sort) => (
+                  <SelectItem
+                    key={sort.value}
+                    value={sort.value}
+                    className={cn(
+                      "cursor-pointer",
+                      "rounded-lg",
+                      "p-2",
+                      "font-inter font-normal",
+                      "text-sm text-[#6C7275]",
+                      "focus:bg-[#F3F5F7] focus:text-[#141718]",
+                      "data-[state=checked]:font-semibold data-[state=checked]:text-[#141718]",
+                    )}
+                  >
+                    {sort.text}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+
+            {/* product card shape */}
             <div className="flex">
               <div className="border border-r-0 border-[#E8ECEF] px-2.5 py-2">
                 <svg
