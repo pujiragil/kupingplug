@@ -4,7 +4,7 @@
 import { useKeenSlider } from "keen-slider/react";
 
 // ui
-import ProductCard from "@/ui/card/productCard";
+import * as ProductCard from "@/ui/card/productCard";
 
 // data
 import products from "@/data/product.json";
@@ -49,7 +49,31 @@ export default function Slider() {
     <div ref={slideRef} className="keen-slider">
       {products.map((product) => (
         <div key={product.id} className="keen-slider__slide">
-          <ProductCard data={product} />
+          <ProductCard.Root data={product}>
+            <ProductCard.Thumbnail>
+              <ProductCard.ThumbnailBadge>
+                <ProductCard.Badge>new</ProductCard.Badge>
+                <ProductCard.WishlistButton />
+              </ProductCard.ThumbnailBadge>
+
+              <ProductCard.Image />
+
+              <div className="absolute bottom-0 left-0 w-full p-4">
+                <ProductCard.Button
+                  size="full"
+                  className="translate-y-[calc(100%+20px)] px-6 py-2 transition-transform duration-200 ease-out group-hover:translate-y-0"
+                >
+                  Add to cart
+                </ProductCard.Button>
+              </div>
+            </ProductCard.Thumbnail>
+
+            <ProductCard.Content>
+              <ProductCard.Name />
+              <ProductCard.Ratings />
+              <ProductCard.Price />
+            </ProductCard.Content>
+          </ProductCard.Root>
         </div>
       ))}
     </div>

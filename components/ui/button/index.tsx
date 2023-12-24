@@ -41,7 +41,7 @@ const buttonVariants = cva("w-fit rounded-lg font-inter font-medium", {
   },
 });
 
-interface ButtonProps
+export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     ButtonVariantsProps {
   children: React.ReactNode;

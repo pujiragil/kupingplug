@@ -50,7 +50,7 @@ const textVariants = cva("", {
   },
 });
 
-interface TextProps
+export interface TextProps
   extends TextVariantsProps,
     Omit<React.HTMLProps<HTMLParagraphElement>, "color" | "size"> {}
 
