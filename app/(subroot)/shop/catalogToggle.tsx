@@ -1,7 +1,10 @@
 "use client";
 
-import { cn } from "@/lib/utils";
+// stores
 import { useProductDetail } from "@/stores/zustand";
+
+// lib
+import { cn } from "@/lib/utils";
 
 export default function CatalogToggle() {
   const { showDetail, setShowDetail } = useProductDetail((state) => ({

@@ -7,10 +7,10 @@ import SectionLayout from "@/layouts/sectionLayout";
 
 // ui
 import Button from "@/ui/button";
-import ProductSlider from "@/ui/slider/productSlider";
 import Heading from "@/ui/head";
-import ProductCard from "@/ui/card/productCard";
 import Text from "@/ui/text";
+import ProductSlider from "@/ui/slider/productSlider";
+import * as ProductCard from "@/ui/card/productCard";
 import {
   ArrowRightIcon,
   CallIcon,
@@ -177,7 +177,31 @@ export default function Home() {
 
           <div className="grid grid-cols-2 gap-x-2 gap-y-4 md:grid-cols-3 lg:grid-cols-4 lg:gap-x-4 lg:gap-y-8 xl:grid-cols-5">
             {products.map((product) => (
-              <ProductCard key={product.id} data={product} />
+              <ProductCard.Root key={product.id} data={product}>
+                <ProductCard.Thumbnail>
+                  <ProductCard.ThumbnailBadge>
+                    <ProductCard.Badge>new</ProductCard.Badge>
+                    <ProductCard.WishlistButton />
+                  </ProductCard.ThumbnailBadge>
+
+                  <ProductCard.Image />
+
+                  <div className="absolute bottom-0 left-0 w-full p-4">
+                    <ProductCard.Button
+                      size="full"
+                      className="translate-y-[calc(100%+20px)] px-6 py-2 transition-transform duration-200 ease-out group-hover:translate-y-0"
+                    >
+                      Add to cart
+                    </ProductCard.Button>
+                  </div>
+                </ProductCard.Thumbnail>
+
+                <ProductCard.Content>
+                  <ProductCard.Name />
+                  <ProductCard.Ratings />
+                  <ProductCard.Price />
+                </ProductCard.Content>
+              </ProductCard.Root>
             ))}
           </div>
         </div>

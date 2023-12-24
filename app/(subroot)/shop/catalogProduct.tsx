@@ -1,10 +1,17 @@
 "use client";
 
+// ui
+import { WishlistIcon } from "@/ui/assets/svg";
 import * as ProductCard from "@/ui/card/productCard";
-import products from "@/data/product.json";
-import { cn } from "@/lib/utils";
+
+// stores
 import { useProductDetail } from "@/stores/zustand";
-import { WishlistIcon } from "@/components/ui/assets/svg";
+
+// data
+import products from "@/data/product.json";
+
+// lib
+import { cn } from "@/lib/utils";
 
 const CatalogProduct = () => {
   const showDetail = useProductDetail((state) => state.showDetail);
