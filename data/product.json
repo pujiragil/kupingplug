@@ -7,7 +7,8 @@
     },
     "rating": 5,
     "name": "Skullcandy - Crusher anc 2 wireless headphones",
-    "price": 299
+    "price": 299,
+    "description": "With its soft shape and color, this spacious basket is just as decorative wherever you choose to put it."
   },
   {
     "id": 2,
@@ -17,7 +18,8 @@
     },
     "rating": 5,
     "name": "Beats Studio Pro",
-    "price": 349
+    "price": 349,
+    "description": "With its soft shape and color, this spacious basket is just as decorative wherever you choose to put it."
   },
   {
     "id": 3,
@@ -27,7 +29,8 @@
     },
     "rating": 4,
     "name": "Sony - WH-CH720N Wireless Noise Canceling",
-    "price": 149
+    "price": 149,
+    "description": "With its soft shape and color, this spacious basket is just as decorative wherever you choose to put it."
   },
   {
     "id": 4,
@@ -37,7 +40,8 @@
     },
     "rating": 5,
     "name": "Skullcandy - Rail True Wireless Earbuds",
-    "price": 99
+    "price": 99,
+    "description": "With its soft shape and color, this spacious basket is just as decorative wherever you choose to put it."
   },
   {
     "id": 5,
@@ -47,7 +51,8 @@
     },
     "rating": 5,
     "name": "Beats Studio Pro",
-    "price": 249
+    "price": 249,
+    "description": "With its soft shape and color, this spacious basket is just as decorative wherever you choose to put it."
   },
   {
     "id": 6,
@@ -57,7 +62,8 @@
     },
     "rating": 4,
     "name": "JBL Reflect Flow Pro+ Bluetooth Truly Wireless Sports",
-    "price": 179
+    "price": 179,
+    "description": "With its soft shape and color, this spacious basket is just as decorative wherever you choose to put it."
   },
   {
     "id": 7,
@@ -67,7 +73,8 @@
     },
     "rating": 5,
     "name": "Bose QuietComfort Headphones",
-    "price": 349
+    "price": 349,
+    "description": "With its soft shape and color, this spacious basket is just as decorative wherever you choose to put it."
   },
   {
     "id": 8,
@@ -77,6 +84,7 @@
     },
     "rating": 5,
     "name": "AKG Y600NC Wireless",
-    "price": 249
+    "price": 249,
+    "description": "With its soft shape and color, this spacious basket is just as decorative wherever you choose to put it."
   }
 ]
