@@ -134,7 +134,7 @@ export default function NavMobile({
           </ul>
 
           {/* login button */}
-          <Button intent="primary" size="full" className="py-2.5 text-lg">
+          <Button width="full" fontSize="lg" className="py-2.5">
             Sign In
           </Button>
 

@@ -21,7 +21,7 @@ import { useRootContext } from "@/hooks/rootContext";
 // lib
 import { cn } from "@/lib/utils";
 
-interface NavbarProps {}
+interface NavbarProps { }
 
 const Navbar: React.FC<NavbarProps> = () => {
   const isRootPage = useRootContext();
@@ -41,6 +41,7 @@ const Navbar: React.FC<NavbarProps> = () => {
   return (
     <div
       className={cn(
+        "nav-wrap",
         isRootPage ? "bg-[#ffc95c]" : "bg-white",
         scroll && "bg-white shadow transition-colors duration-200 ease-in",
       )}
