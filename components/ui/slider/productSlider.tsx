@@ -60,8 +60,8 @@ export default function Slider() {
 
               <div className="absolute bottom-0 left-0 w-full p-4">
                 <ProductCard.Button
-                  size="full"
-                  className="translate-y-[calc(100%+20px)] px-6 py-2 transition-transform duration-200 ease-out group-hover:translate-y-0"
+                  width="full"
+                  className="translate-y-[calc(100%+20px)] transition-transform duration-200 ease-out group-hover:translate-y-0"
                 >
                   Add to cart
                 </ProductCard.Button>
@@ -69,8 +69,8 @@ export default function Slider() {
             </ProductCard.Thumbnail>
 
             <ProductCard.Content>
-              <ProductCard.Name />
               <ProductCard.Ratings />
+              <ProductCard.Name />
               <ProductCard.Price />
             </ProductCard.Content>
           </ProductCard.Root>

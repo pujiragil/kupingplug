@@ -41,7 +41,7 @@ export default function Home() {
               Experience music like never before
             </Text>
           </div>
-          <Button intent="primary" size="lg">
+          <Button fontSize="sm" className="px-14 py-3 md:text-lg">
             Shopping Now
           </Button>
         </div>
@@ -188,7 +188,7 @@ export default function Home() {
 
                   <div className="absolute bottom-0 left-0 w-full p-4">
                     <ProductCard.Button
-                      size="full"
+                      width="full"
                       className="translate-y-[calc(100%+20px)] px-6 py-2 transition-transform duration-200 ease-out group-hover:translate-y-0"
                     >
                       Add to cart
@@ -197,8 +197,8 @@ export default function Home() {
                 </ProductCard.Thumbnail>
 
                 <ProductCard.Content>
-                  <ProductCard.Name />
                   <ProductCard.Ratings />
+                  <ProductCard.Name />
                   <ProductCard.Price />
                 </ProductCard.Content>
               </ProductCard.Root>
@@ -295,7 +295,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <Button intent="primary" size="md">
+            <Button fontSize="sm" className="py-1.5 md:text-base">
               Shop now
             </Button>
           </div>

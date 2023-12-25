@@ -19,7 +19,7 @@ const CatalogProduct = () => {
     <div className="space-y-8 py-20 pt-8 lg:space-y-20">
       <div
         className={cn(
-          "grid  gap-x-2 gap-y-4 lg:gap-x-4 lg:gap-y-8",
+          "grid gap-x-2 gap-y-4 lg:gap-x-4 lg:gap-y-8",
           showDetail
             ? "grid-cols-1 lg:grid-cols-2"
             : "grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5",
@@ -33,7 +33,9 @@ const CatalogProduct = () => {
               showDetail ? "sm:grid-cols-2 sm:place-items-center" : undefined
             }
           >
+            {/* product card thumbnail */}
             <ProductCard.Thumbnail>
+              {/* badge */}
               <ProductCard.ThumbnailBadge>
                 <div className="space-y-1.5">
                   <ProductCard.Badge>new</ProductCard.Badge>
@@ -45,13 +47,15 @@ const CatalogProduct = () => {
                 {!showDetail && <ProductCard.WishlistButton />}
               </ProductCard.ThumbnailBadge>
 
+              {/* image */}
               <ProductCard.Image />
 
+              {/* button */}
               {!showDetail && (
                 <div className="absolute bottom-0 left-0 w-full p-4">
                   <ProductCard.Button
-                    size="full"
-                    className="translate-y-[calc(100%+20px)] px-6 py-2 transition-transform duration-200 ease-out group-hover:translate-y-0"
+                    width="full"
+                    className="translate-y-[calc(100%+20px)] transition-transform duration-200 ease-out group-hover:translate-y-0"
                   >
                     Add to cart
                   </ProductCard.Button>
@@ -59,29 +63,42 @@ const CatalogProduct = () => {
               )}
             </ProductCard.Thumbnail>
 
-            <ProductCard.Content
-              className={showDetail ? "space-y-3 p-6" : undefined}
-            >
+            {/* product card content */}
+            <ProductCard.Content className="md:p-6">
               <ProductCard.Ratings />
-              <ProductCard.Name />
+              <div className="flex items-center justify-between gap-1">
+                <ProductCard.Name />
+                <button
+                  className={`flex items-center justify-center p-1.5 md:hidden ${!showDetail && "hidden"
+                    }`}
+                >
+                  <WishlistIcon className="h-7 w-7" />
+                </button>
+              </div>
               <ProductCard.Price />
               {showDetail && (
-                <>
-                  <ProductCard.Description className="line-clamp-2 lg:line-clamp-3" />
+                <div className="space-y-4 pt-1 lg:space-y-6">
+                  <ProductCard.Description className="line-clamp-3 md:text-sm" />
 
                   <div className="flex flex-col gap-2">
-                    <ProductCard.Button size="full" className="px-6 py-2">
+                    <ProductCard.Button
+                      width="full"
+                      fontSize="sm"
+                      className="lg:text-base"
+                    >
                       Add to cart
                     </ProductCard.Button>
                     <ProductCard.Button
-                      size="full"
-                      className="flex items-center justify-center gap-2 border-2 border-transparent bg-white px-6 py-2 text-[#141718] hover:border-[#141718]"
+                      variant="ghost"
+                      width="full"
+                      fontSize="sm"
+                      className="flex items-center justify-center gap-1 lg:text-base"
                     >
                       <WishlistIcon fill="#141718" className="h-5 w-5" />
                       Wishlist
                     </ProductCard.Button>
                   </div>
-                </>
+                </div>
               )}
             </ProductCard.Content>
           </ProductCard.Root>

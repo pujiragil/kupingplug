@@ -99,7 +99,7 @@ export default function Page() {
               </div>
             </div>
 
-            <Button intent="primary" size="full" className="px-10 py-2.5">
+            <Button width="full" className="py-2.5">
               Sign In
             </Button>
           </div>
