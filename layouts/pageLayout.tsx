@@ -15,7 +15,7 @@ export default function PageLayout({ root, children }: PageLayoutProps) {
   return (
     <>
       <RootContextProvider root={root}>
-        <div className="sticky top-0 z-50">
+        <div className="nav-wrap">
           <PromoSection />
           <Navbar />
         </div>
