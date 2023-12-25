@@ -6,57 +6,49 @@ import { cn } from "@/lib/utils";
 
 type ButtonVariantsProps = VariantProps<typeof buttonVariants>;
 
-const buttonVariants = cva("w-fit rounded-lg font-inter font-medium", {
-  variants: {
-    intent: {
-      primary: "bg-[#141718] text-white",
+const buttonVariants = cva(
+  "w-fit rounded-lg px-10 py-2 font-inter font-medium",
+  {
+    variants: {
+      variant: {
+        primary: "bg-[#141718] text-white",
+        ghost:
+          "border-2 border-transparent bg-white text-[#141718] transition-colors duration-100 ease-in hover:border-[#141718]",
+      },
+      fontSize: {
+        xs: "text-xs",
+        sm: "text-sm",
+        base: "text-base",
+        lg: "text-lg",
+      },
+      width: {
+        full: "w-full",
+      },
     },
-    size: {
-      sm: "px-[26px] py-3",
-      md: "px-10 py-1.5",
-      lg: "px-14 py-3",
-      full: "w-full px-6 py-2",
+    defaultVariants: {
+      variant: "primary",
+      fontSize: "base",
     },
   },
-  compoundVariants: [
-    {
-      intent: "primary",
-      size: "lg",
-      className: "text-sm lg:text-lg",
-    },
-    {
-      intent: "primary",
-      size: "md",
-      className: "text-sm lg:text-base",
-    },
-    {
-      intent: "primary",
-      size: "sm",
-      className: "text-base",
-    },
-  ],
-  defaultVariants: {
-    intent: "primary",
-    size: "sm",
-  },
-});
+);
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    ButtonVariantsProps {
+  ButtonVariantsProps {
   children: React.ReactNode;
 }
 
 const Button: React.FC<ButtonProps> = ({
-  intent,
-  size,
+  variant,
+  fontSize,
+  width,
   className,
   children,
   ...props
 }) => {
   return (
     <button
-      className={cn(buttonVariants({ intent, size, className }))}
+      className={cn(buttonVariants({ variant, fontSize, width, className }))}
       {...props}
     >
       {children}
