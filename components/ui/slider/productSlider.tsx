@@ -1,81 +1,134 @@
 "use client";
 
 // package
+import Image from "next/image";
+import { useState } from "react";
 import { useKeenSlider } from "keen-slider/react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 // ui
-import * as ProductCard from "@/ui/card/productCard";
+import ProductThumbnailSlider from "@/ui/slider/productThumbnailSlider";
 
-// data
-import products from "@/data/product.json";
+// lib
+import { cn } from "@/lib/utils";
 
 // css
 import "keen-slider/keen-slider.min.css";
 
-export default function Slider() {
-  const [slideRef] = useKeenSlider<HTMLDivElement>({
-    slides: {
-      spacing: 8,
-      perView: 2,
+const images = [
+  "sumplekuping-1.png",
+  "sumplekuping-2.png",
+  "sumplekuping-3.png",
+  "sumplekuping-4.png",
+  "sumplekuping-5.png",
+  "sumplekuping-6.png",
+  "sumplekuping-7.png",
+  "sumplekuping-8.png",
+];
+
+interface ProductNavigationButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  position: "right" | "left";
+  stroke: string;
+}
+
+const ProductNavigationButton: React.FC<ProductNavigationButtonProps> = ({
+  position,
+  stroke,
+  ...props
+}) => {
+  const navigationIcon =
+    position === "right" ? (
+      <ArrowRight stroke={stroke} className="h-6 w-6" />
+    ) : (
+      <ArrowLeft stroke={stroke} className="h-6 w-6" />
+    );
+  return (
+    <button
+      disabled
+      className={cn(
+        "absolute top-1/2 -translate-y-[50%] rounded-full bg-white p-2 shadow",
+        position === "right" ? "right-4" : "left-4",
+      )}
+      {...props}
+    >
+      {navigationIcon}
+    </button>
+  );
+};
+
+const ProductSlider = () => {
+  const [currentSlide, setCurrentSlide] = useState<number>(0);
+  const [loaded, setLoaded] = useState<boolean>(false);
+  const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
+    initial: 0,
+    created() {
+      setLoaded(true);
     },
-    mode: "snap",
-    breakpoints: {
-      "(min-width: 768px)": {
-        slides: {
-          perView: 3,
-          spacing: 16,
-        },
-        mode: "free-snap",
-      },
-      "(min-width: 1024px)": {
-        slides: {
-          perView: 4,
-          spacing: 16,
-        },
-        mode: "free-snap",
-      },
-      "(min-width: 1280px)": {
-        slides: {
-          perView: 5,
-          spacing: 16,
-        },
-        mode: "free-snap",
-      },
+    slideChanged(slide) {
+      setCurrentSlide(slide.track.details.rel);
     },
-    renderMode: "performance",
   });
 
   return (
-    <div ref={slideRef} className="keen-slider">
-      {products.map((product) => (
-        <div key={product.id} className="keen-slider__slide">
-          <ProductCard.Root data={product}>
-            <ProductCard.Thumbnail>
-              <ProductCard.ThumbnailBadge>
-                <ProductCard.Badge>new</ProductCard.Badge>
-                <ProductCard.WishlistButton />
-              </ProductCard.ThumbnailBadge>
-
-              <ProductCard.Image />
-
-              <div className="absolute bottom-0 left-0 w-full p-4">
-                <ProductCard.Button
-                  width="full"
-                  className="translate-y-[calc(100%+20px)] transition-transform duration-200 ease-out group-hover:translate-y-0"
-                >
-                  Add to cart
-                </ProductCard.Button>
-              </div>
-            </ProductCard.Thumbnail>
-
-            <ProductCard.Content>
-              <ProductCard.Ratings />
-              <ProductCard.Name />
-              <ProductCard.Price />
-            </ProductCard.Content>
-          </ProductCard.Root>
+    <div className="grid w-full gap-6 lg:sticky lg:top-0">
+      <div className="relative flex w-full overflow-hidden">
+        <div
+          ref={sliderRef}
+          className="keen-slider h-[420px] w-full lg:h-[400px]"
+        >
+          {images.map((image) => (
+            <div
+              key={image}
+              className="keen-slider__slide flex items-center justify-center bg-[#F3F5F7]"
+            >
+              <Image
+                width={231}
+                height={308}
+                src={`/images/${image}`}
+                alt="sumplekuping"
+                className="h-full w-auto object-cover"
+              />
+            </div>
+          ))}
         </div>
-      ))}
+        {loaded && instanceRef.current && (
+          <>
+            <ProductNavigationButton
+              position="left"
+              stroke={currentSlide === 0 ? "#6C7275" : "#141718"}
+              onClick={(e: any) =>
+                e.stopPropagation() || instanceRef.current?.prev()
+              }
+              disabled={currentSlide === 0}
+            />
+            <ProductNavigationButton
+              position="right"
+              stroke={
+                currentSlide ===
+                instanceRef.current.track.details.slides.length - 1
+                  ? "#6C7275"
+                  : "#141718"
+              }
+              onClick={(e: any) =>
+                e.stopPropagation() || instanceRef.current?.next()
+              }
+              disabled={
+                currentSlide ===
+                instanceRef.current.track.details.slides.length - 1
+              }
+            />
+          </>
+        )}
+      </div>
+      <div className="hidden w-full overflow-hidden lg:flex">
+        <ProductThumbnailSlider
+          products={images}
+          thumbnailInstanceRef={instanceRef}
+        />
+      </div>
     </div>
   );
-}
+};
+
+export default ProductSlider;
