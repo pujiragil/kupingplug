@@ -9,7 +9,7 @@ import SectionLayout from "@/layouts/sectionLayout";
 import Button from "@/ui/button";
 import Heading from "@/ui/head";
 import Text from "@/ui/text";
-import ProductSlider from "@/ui/slider/productSlider";
+import CatalogSlider from "@/ui/slider/catalogSlider";
 import * as ProductCard from "@/ui/card/productCard";
 import {
   ArrowRightIcon,
@@ -69,8 +69,8 @@ export default function Home() {
             New Arrivals
           </Heading>
 
-          {/* Product slider */}
-          <ProductSlider />
+          {/* catalog product slider */}
+          <CatalogSlider />
         </div>
       </SectionLayout>
 
