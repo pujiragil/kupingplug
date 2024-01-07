@@ -9,6 +9,7 @@ import SectionLayout from "@/layouts/sectionLayout";
 import { DropdownIcon, StarIcon, WishlistIcon } from "@/ui/assets/svg";
 import Button from "@/ui/button";
 import ProductSlider from "@/ui/slider/productSlider";
+import ProductTab from "@/app/(subroot)/product/productTab";
 
 export default function Page() {
   return (
@@ -250,7 +251,8 @@ export default function Page() {
           </div>
         </div>
 
-        <div className="mx-auto max-w-[420px] space-y-10 md:max-w-[520px] lg:max-w-none">
+        <ProductTab />
+        {/* <div className="mx-auto max-w-[420px] space-y-10 md:max-w-[520px] lg:max-w-none">
           <div className="flex flex-col lg:flex-row lg:gap-10">
             <div className="flex items-center justify-between border-b border-[#6C7275] pb-2 lg:border-none lg:p-0">
               <p className="font-inter text-lg font-medium text-[#6C7275]">
@@ -452,7 +454,7 @@ export default function Page() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </SectionLayout>
   );
