@@ -76,8 +76,10 @@
   }
 }
 
-.nav-wrap {
-  position: sticky;
-  top: 0;
-  z-index: 100;
+@layer utilities {
+  .nav-wrap {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
 }
