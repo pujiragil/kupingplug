@@ -1,10 +1,13 @@
 "use client";
 
-import Image from "next/image";
-import { DropdownIcon, StarIcon } from "@/ui/assets/svg";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/ui/tabs";
+// packages
 import { useState } from "react";
+import Image from "next/image";
+
+// ui
 import Text from "@/ui/text";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/ui/tabs";
+import { DropdownIcon, StarIcon } from "@/ui/assets/svg";
 
 const productTabs = [
   {
@@ -27,7 +30,7 @@ const ProductTab = () => {
     <Tabs
       defaultValue={productTabs[0].value}
       onValueChange={(tab) => setCurrentTab(tab)}
-      className="mx-auto w-full max-w-[420px] space-y-10 lg:max-w-none"
+      className="mx-auto w-full max-w-[420px] space-y-10 md:max-w-[520px] lg:max-w-none"
     >
       <TabsList className="flex h-auto w-full flex-col gap-2 bg-white p-2 lg:flex-row lg:justify-start lg:gap-8 lg:rounded-none lg:border-b lg:border-[#E8ECEF] lg:p-0">
         {productTabs.map((tab) => (
