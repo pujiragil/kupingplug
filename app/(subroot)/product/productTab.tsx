@@ -141,7 +141,7 @@ const Info = () => {
 
 const Reviews = () => {
   return (
-    <div className="space-y-10">
+    <div className="space-y-10 pb-10">
       <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
         <p className="font-poppins text-2xl font-medium text-[#141718]">
           11 Reviews
