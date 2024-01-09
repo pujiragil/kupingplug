@@ -49,18 +49,6 @@ const CatalogProduct = () => {
 
               {/* image */}
               <ProductCard.Image />
-
-              {/* button */}
-              {!showDetail && (
-                <div className="absolute bottom-0 left-0 w-full p-4">
-                  <ProductCard.Button
-                    width="full"
-                    className="translate-y-[calc(100%+20px)] transition-transform duration-200 ease-out group-hover:translate-y-0"
-                  >
-                    Add to cart
-                  </ProductCard.Button>
-                </div>
-              )}
             </ProductCard.Thumbnail>
 
             {/* product card content */}
@@ -69,8 +57,9 @@ const CatalogProduct = () => {
               <div className="flex items-center justify-between gap-1">
                 <ProductCard.Name />
                 <button
-                  className={`flex items-center justify-center p-1.5 md:hidden ${!showDetail && "hidden"
-                    }`}
+                  className={`flex items-center justify-center p-1.5 md:hidden ${
+                    !showDetail && "hidden"
+                  }`}
                 >
                   <WishlistIcon className="h-7 w-7" />
                 </button>

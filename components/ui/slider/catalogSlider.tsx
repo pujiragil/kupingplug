@@ -57,15 +57,6 @@ export default function CatalogSlider() {
               </ProductCard.ThumbnailBadge>
 
               <ProductCard.Image />
-
-              <div className="absolute bottom-0 left-0 w-full p-4">
-                <ProductCard.Button
-                  width="full"
-                  className="translate-y-[calc(100%+20px)] transition-transform duration-200 ease-out group-hover:translate-y-0"
-                >
-                  Add to cart
-                </ProductCard.Button>
-              </div>
             </ProductCard.Thumbnail>
 
             <ProductCard.Content>
