@@ -1,5 +1,4 @@
 // ui
-import PromoSection from "@/ui/promo";
 import Navbar from "@/ui/navbar";
 import Footer from "@/ui/footer";
 
@@ -15,7 +14,6 @@ export default function PageLayout({ root, children }: PageLayoutProps) {
   return (
     <>
       <RootContextProvider root={root}>
-        <PromoSection />
         <Navbar />
       </RootContextProvider>
       <main>{children}</main>
