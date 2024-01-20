@@ -1,8 +1,10 @@
 "use client";
 
-import { cn } from "@/lib/utils";
 // package
 import { useState } from "react";
+
+// lib
+import { cn } from "@/lib/utils";
 
 const cartSelectMenus: CartSelectItemProps["data"][] = [
   {
@@ -35,7 +37,7 @@ const CartSummary = () => {
         Cart summary
       </p>
 
-      <div className="space-y-4">
+      {/* <div className="space-y-4">
         <div className="space-y-3">
           {cartSelectMenus.map((menu) => (
             <CartSelectItem
@@ -45,33 +47,33 @@ const CartSummary = () => {
               onSelect={handleCartSelect}
             />
           ))}
-        </div>
+        </div> */}
 
-        <div className="space-y-6">
-          <div>
-            <div className="flex items-center justify-between border-b border-[#EAEAEA] py-3">
-              <p className="font-inter text-sm font-medium text-[#141718]">
-                Subtotal
-              </p>
-              <p className="font-inter text-sm font-medium text-[#141718]">
-                $120.00
-              </p>
-            </div>
-            <div className="flex items-center justify-between py-3">
-              <p className="font-poppins text-lg font-semibold text-[#141718]">
-                Total
-              </p>
-              <p className="font-poppins text-lg font-semibold text-[#141718]">
-                $120.00
-              </p>
-            </div>
+      <div className="space-y-6">
+        <div>
+          <div className="flex items-center justify-between border-b border-[#EAEAEA] py-3">
+            <p className="font-inter text-sm font-medium text-[#141718]">
+              Subtotal
+            </p>
+            <p className="font-inter text-sm font-medium text-[#141718]">
+              $120.00
+            </p>
           </div>
-
-          <button className="w-full rounded-lg bg-[#141718] px-6 py-2.5 font-inter text-lg font-medium text-white">
-            Checkout
-          </button>
+          <div className="flex items-center justify-between py-3">
+            <p className="font-poppins text-lg font-semibold text-[#141718]">
+              Total
+            </p>
+            <p className="font-poppins text-lg font-semibold text-[#141718]">
+              $120.00
+            </p>
+          </div>
         </div>
+
+        <button className="w-full rounded-lg bg-[#141718] px-6 py-2.5 font-inter text-lg font-medium text-white">
+          Checkout
+        </button>
       </div>
+      {/*       </div> */}
     </div>
   );
 };
