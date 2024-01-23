@@ -1,7 +1,9 @@
 "use client";
 
+// ui
 import * as ProductCard from "@/ui/card/productCard";
 
+// data
 import products from "@/data/product.json";
 
 const ProductRecommendation = () => {
