@@ -82,4 +82,9 @@
     top: 0;
     z-index: 100;
   }
+
+  .checkout-select-trigger>span {
+    width: 100%;
+    text-align: left;
+  }
 }

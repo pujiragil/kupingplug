@@ -8,7 +8,7 @@ import { Select, SelectTrigger, SelectValue, SelectContent } from "@/ui/select";
 const DeliveryOption = () => {
   return (
     <Select>
-      <SelectTrigger className="custom-trigger h-10 w-full px-4 font-inter text-sm font-semibold text-[#141718] focus:ring-0 focus:ring-offset-0">
+      <SelectTrigger className="checkout-select-trigger h-10 w-full px-4 font-inter text-sm font-semibold text-[#141718] focus:ring-0 focus:ring-offset-0">
         <SelectValue placeholder="Choose Delivery" />
       </SelectTrigger>
       <SelectContent className="w-full">
