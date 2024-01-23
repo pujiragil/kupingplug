@@ -13,7 +13,7 @@ const CartCoupon = () => {
         </p>
       </div>
 
-      <div className="flex items-center gap-4 border border-[#6C7275] p-4">
+      <div className="flex items-center gap-4 rounded-md border border-[#6C7275] p-4">
         <DiscountIcon fill="#6C7275" className="h-6 w-6" />
         <input
           placeholder="Coupon code"
