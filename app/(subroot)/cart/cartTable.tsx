@@ -1,6 +1,41 @@
-// package
-import Image from "next/image";
-import { Minus, Plus, X } from "lucide-react";
+// ui
+import CartItem from "@/app/(subroot)/cart/cartItem";
+
+const carts = [
+  {
+    id: 1,
+    image: {
+      src: "/images/sumplekuping-1.png",
+      alt: "sumplekuping",
+    },
+    name: "Skullcandy - Rail True Wireless Earbuds",
+    quantity: 2,
+    price: 120,
+    color: "Black",
+  },
+  {
+    id: 2,
+    image: {
+      src: "/images/sumplekuping-2.png",
+      alt: "sumplekuping",
+    },
+    name: "Sony - WH-CH720N Wireless Noise Canceling",
+    quantity: 1,
+    price: 420,
+    color: "White",
+  },
+  {
+    id: 3,
+    image: {
+      src: "/images/sumplekuping-4.png",
+      alt: "sumplekuping",
+    },
+    name: "Bose QuietComfort Headphones",
+    quantity: 3,
+    price: 70,
+    color: "Black",
+  },
+];
 
 const CartTable = () => {
   return (
@@ -23,189 +58,14 @@ const CartTable = () => {
       </thead>
 
       <tbody>
-        <tr className="border-b border-[#E8ECEF] last:border-b-0">
-          <td className="py-6">
-            <div className="flex gap-4 sm:items-center">
-              <div className="h-[120px] min-w-[120px] max-w-[120px] bg-[#F3F5F7]">
-                <Image
-                  src="/images/sumplekuping-1.png"
-                  alt="sumplekuping"
-                  width={231}
-                  height={308}
-                  className="h-full w-full object-cover"
-                />
-              </div>
-              <div className="w-full space-y-2">
-                <div className="flex items-center justify-between">
-                  <p className="font-inter text-sm font-semibold text-[#141718] sm:text-base">
-                    Tray Table
-                  </p>
-                  <p className="font-inter text-sm font-semibold text-[#141718] sm:hidden">
-                    $19.90
-                  </p>
-                </div>
-
-                <div className="flex items-center justify-between">
-                  <p className="font-inter text-xs font-normal text-[#6C7275] sm:text-sm">
-                    Color: Black
-                  </p>
-                  <X stroke="#6C7275" className="h-6 w-6 sm:hidden" />
-                </div>
-
-                <div className="flex w-[96px] items-center justify-between rounded border border-[#6C7275] p-2 sm:hidden">
-                  <Minus className="h-4 w-4" />
-                  <span className="font-inter text-xs font-semibold text-[#141718]">
-                    2
-                  </span>
-                  <Plus className="h-4 w-4" />
-                </div>
-              </div>
-            </div>
-          </td>
-          <td className="hidden py-6 sm:table-cell">
-            <div className="flex justify-center">
-              <div className="flex w-[96px] items-center justify-between rounded border border-[#6C7275] p-2">
-                <Minus className="h-4 w-4" />
-                <span className="font-inter text-xs font-semibold text-[#141718]">
-                  2
-                </span>
-                <Plus className="h-4 w-4" />
-              </div>
-            </div>
-          </td>
-          <td className="hidden py-6 sm:table-cell">
-            <p className="text-center font-inter text-base font-normal text-[#141718]">
-              $19.90
-            </p>
-          </td>
-          <td className="hidden py-6 sm:table-cell">
-            <p className="text-center font-inter text-base font-semibold text-[#141718]">
-              $39.80
-            </p>
-          </td>
-        </tr>
-        <tr className="border-b border-[#E8ECEF] last:border-b-0">
-          <td className="py-6">
-            <div className="flex gap-4 sm:items-center">
-              <div className="h-[120px] min-w-[120px] max-w-[120px] bg-[#F3F5F7]">
-                <Image
-                  src="/images/sumplekuping-1.png"
-                  alt="sumplekuping"
-                  width={231}
-                  height={308}
-                  className="h-full w-full object-cover"
-                />
-              </div>
-              <div className="w-full space-y-2">
-                <div className="flex items-center justify-between">
-                  <p className="font-inter text-sm font-semibold text-[#141718] sm:text-base">
-                    Tray Table
-                  </p>
-                  <p className="font-inter text-sm font-semibold text-[#141718] sm:hidden">
-                    $19.90
-                  </p>
-                </div>
-
-                <div className="flex items-center justify-between">
-                  <p className="font-inter text-xs font-normal text-[#6C7275] sm:text-sm">
-                    Color: Black
-                  </p>
-                  <X stroke="#6C7275" className="h-6 w-6 sm:hidden" />
-                </div>
-
-                <div className="flex w-[96px] items-center justify-between rounded border border-[#6C7275] p-2 sm:hidden">
-                  <Minus className="h-4 w-4" />
-                  <span className="font-inter text-xs font-semibold text-[#141718]">
-                    2
-                  </span>
-                  <Plus className="h-4 w-4" />
-                </div>
-              </div>
-            </div>
-          </td>
-          <td className="hidden py-6 sm:table-cell">
-            <div className="flex justify-center">
-              <div className="flex w-[96px] items-center justify-between rounded border border-[#6C7275] p-2">
-                <Minus className="h-4 w-4" />
-                <span className="font-inter text-xs font-semibold text-[#141718]">
-                  2
-                </span>
-                <Plus className="h-4 w-4" />
-              </div>
-            </div>
-          </td>
-          <td className="hidden py-6 sm:table-cell">
-            <p className="text-center font-inter text-base font-normal text-[#141718]">
-              $19.90
-            </p>
-          </td>
-          <td className="hidden py-6 sm:table-cell">
-            <p className="text-center font-inter text-base font-semibold text-[#141718]">
-              $39.80
-            </p>
-          </td>
-        </tr>
-        <tr className="border-b border-[#E8ECEF] last:border-b-0">
-          <td className="py-6">
-            <div className="flex gap-4 sm:items-center">
-              <div className="h-[120px] min-w-[120px] max-w-[120px] bg-[#F3F5F7]">
-                <Image
-                  src="/images/sumplekuping-1.png"
-                  alt="sumplekuping"
-                  width={231}
-                  height={308}
-                  className="h-full w-full object-cover"
-                />
-              </div>
-              <div className="w-full space-y-2">
-                <div className="flex items-center justify-between">
-                  <p className="font-inter text-sm font-semibold text-[#141718] sm:text-base">
-                    Tray Table
-                  </p>
-                  <p className="font-inter text-sm font-semibold text-[#141718] sm:hidden">
-                    $19.90
-                  </p>
-                </div>
-
-                <div className="flex items-center justify-between">
-                  <p className="font-inter text-xs font-normal text-[#6C7275] sm:text-sm">
-                    Color: Black
-                  </p>
-                  <X stroke="#6C7275" className="h-6 w-6 sm:hidden" />
-                </div>
-
-                <div className="flex w-[96px] items-center justify-between rounded border border-[#6C7275] p-2 sm:hidden">
-                  <Minus className="h-4 w-4" />
-                  <span className="font-inter text-xs font-semibold text-[#141718]">
-                    2
-                  </span>
-                  <Plus className="h-4 w-4" />
-                </div>
-              </div>
-            </div>
-          </td>
-          <td className="hidden py-6 sm:table-cell">
-            <div className="flex justify-center">
-              <div className="flex w-[96px] items-center justify-between rounded border border-[#6C7275] p-2">
-                <Minus className="h-4 w-4" />
-                <span className="font-inter text-xs font-semibold text-[#141718]">
-                  2
-                </span>
-                <Plus className="h-4 w-4" />
-              </div>
-            </div>
-          </td>
-          <td className="hidden py-6 sm:table-cell">
-            <p className="text-center font-inter text-base font-normal text-[#141718]">
-              $19.90
-            </p>
-          </td>
-          <td className="hidden py-6 sm:table-cell">
-            <p className="text-center font-inter text-base font-semibold text-[#141718]">
-              $39.80
-            </p>
-          </td>
-        </tr>
+        {carts.map((cart) => (
+          <tr
+            key={cart.id}
+            className="border-b border-[#E8ECEF] last:border-b-0"
+          >
+            <CartItem product={cart} />
+          </tr>
+        ))}
       </tbody>
     </table>
   );
