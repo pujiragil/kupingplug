@@ -1,10 +1,12 @@
-import { ChevronLeft, MapPin, Minus, Plus, X } from "lucide-react";
+// package
+import { ChevronLeft, MapPin } from "lucide-react";
 
+// layouts
 import SectionLayout from "@/layouts/sectionLayout";
-import { DiscountIcon, MoneyIcon } from "@/components/ui/assets/svg";
-import Image from "next/image";
+
+// ui
+import { DiscountIcon } from "@/ui/assets/svg";
 import PaymentMethod from "@/app/(subroot)/checkout/checkoutPaymentMethod";
-import CartCoupon from "@/app/(subroot)/cart/cartCoupon";
 import CheckoutOrders from "@/app/(subroot)/checkout/checkoutOrders";
 
 export default function Page() {
