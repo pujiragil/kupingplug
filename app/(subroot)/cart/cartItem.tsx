@@ -3,13 +3,25 @@
 // package
 import { useState } from "react";
 import Image from "next/image";
-import { Check } from "lucide-react";
+import {
+  Check,
+  Heart,
+  MoreHorizontal,
+  MoreVertical,
+  Trash,
+} from "lucide-react";
 
 // lib
 import { cn, formatCurrency } from "@/lib/utils";
 
 // ui
 import CartQuantity from "@/app/(subroot)/cart/cartQuantity";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 export type CartItemProps = {
   product: {
@@ -92,10 +104,43 @@ const CartItem: React.FC<CartItemProps> = ({ product }) => {
                   Color: {product.color}
                 </p>
 
+                <div className="sm:hidden">
+                  <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                      <button className="h-4 w-4">
+                        <MoreVertical className="h-full w-full" />
+                      </button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent
+                      align="end"
+                      className="border-[#141718]"
+                    >
+                      <DropdownMenuItem className="gap-2 font-inter text-xs font-normal text-[#141718]">
+                        <Heart stroke="#141718" className="h-4 w-4" />
+                        Add to wishlist
+                      </DropdownMenuItem>
+                      <DropdownMenuItem className="gap-2 font-inter text-xs font-normal text-[#141718]">
+                        <Trash stroke="#141718" className="h-4 w-4" />
+                        Remove from cart
+                      </DropdownMenuItem>
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                </div>
+              </div>
+
+              <div className="flex items-center justify-between sm:hidden">
+                <CartQuantity
+                  quantity={quantity}
+                  onMinusQuantity={handleMinusQuantity}
+                  onAddQuantity={handleAddQuantity}
+                  disabled={!check}
+                  aria-disabled={!check}
+                />
+
                 <div
                   onClick={handleCheck}
                   className={cn(
-                    "flex h-4 w-4 cursor-pointer items-center justify-center rounded border border-[#141718] sm:hidden",
+                    "flex h-4 w-4 cursor-pointer items-center justify-center rounded border border-[#141718]",
                     check ? "bg-[#141718]" : "bg-white",
                   )}
                 >
@@ -107,14 +152,6 @@ const CartItem: React.FC<CartItemProps> = ({ product }) => {
                     />
                   )}
                 </div>
-              </div>
-
-              <div className="sm:hidden">
-                <CartQuantity
-                  quantity={quantity}
-                  onMinusQuantity={handleMinusQuantity}
-                  onAddQuantity={handleAddQuantity}
-                />
               </div>
             </div>
           </div>
@@ -131,6 +168,8 @@ const CartItem: React.FC<CartItemProps> = ({ product }) => {
             quantity={quantity}
             onMinusQuantity={handleMinusQuantity}
             onAddQuantity={handleAddQuantity}
+            disabled={!check}
+            aria-disabled={!check}
           />
         </div>
       </td>
@@ -153,6 +192,30 @@ const CartItem: React.FC<CartItemProps> = ({ product }) => {
         <p className="text-center font-inter text-base font-semibold text-[#141718]">
           {totalPrice}
         </p>
+      </td>
+      <td
+        className={cn(
+          "hidden sm:table-cell",
+          check ? "opacity-100" : "opacity-50",
+        )}
+      >
+        <DropdownMenu>
+          <DropdownMenuTrigger disabled={!check} asChild>
+            <button className="h-4 w-4 disabled:cursor-not-allowed">
+              <MoreHorizontal className="h-full w-full" />
+            </button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end" className="border-[#141718]">
+            <DropdownMenuItem className="gap-2 font-inter text-xs font-normal text-[#141718]">
+              <Heart stroke="#141718" className="h-4 w-4" />
+              Add to wishlist
+            </DropdownMenuItem>
+            <DropdownMenuItem className="gap-2 font-inter text-xs font-normal text-[#141718]">
+              <Trash stroke="#141718" className="h-4 w-4" />
+              Remove from cart
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
       </td>
     </>
   );
