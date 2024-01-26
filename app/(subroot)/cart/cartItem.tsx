@@ -115,11 +115,11 @@ const CartItem: React.FC<CartItemProps> = ({ product }) => {
                       align="end"
                       className="border-[#141718]"
                     >
-                      <DropdownMenuItem className="gap-2 font-inter text-xs font-normal text-[#141718]">
+                      <DropdownMenuItem className="gap-2 font-inter text-xs font-normal text-[#141718] focus:bg-[#E8ECEF]">
                         <Heart stroke="#141718" className="h-4 w-4" />
                         Add to wishlist
                       </DropdownMenuItem>
-                      <DropdownMenuItem className="gap-2 font-inter text-xs font-normal text-[#141718]">
+                      <DropdownMenuItem className="gap-2 font-inter text-xs font-normal text-[#141718] focus:bg-[#E8ECEF]">
                         <Trash stroke="#141718" className="h-4 w-4" />
                         Remove from cart
                       </DropdownMenuItem>
@@ -206,11 +206,11 @@ const CartItem: React.FC<CartItemProps> = ({ product }) => {
             </button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end" className="border-[#141718]">
-            <DropdownMenuItem className="gap-2 font-inter text-xs font-normal text-[#141718]">
+            <DropdownMenuItem className="gap-2 font-inter text-xs font-normal text-[#141718] focus:bg-[#E8ECEF]">
               <Heart stroke="#141718" className="h-4 w-4" />
               Add to wishlist
             </DropdownMenuItem>
-            <DropdownMenuItem className="gap-2 font-inter text-xs font-normal text-[#141718]">
+            <DropdownMenuItem className="gap-2 font-inter text-xs font-normal text-[#141718] focus:bg-[#E8ECEF]">
               <Trash stroke="#141718" className="h-4 w-4" />
               Remove from cart
             </DropdownMenuItem>
