@@ -1,0 +1,196 @@
+[
+  {
+    "id": "WF-1000XM5",
+    "name": "WF-1000XM5 The Best Truly Wireless Noise Canceling Earbuds",
+    "categories": [
+      "Truly Wireless",
+      "Earbuds"
+    ],
+    "description": "The best truly wireless noise canceling2 headphones on the market. Astonishing sound quality with High-Resolution Audio. Sony’s best ever call quality3 with AI based noise reduction algorithm and bone conduction sensor.",
+    "price": 279,
+    "rating": 5,
+    "variants": [
+      {
+        "name": "black",
+        "image": {
+          "src": "WF-1000XM5-1-B.webp",
+          "alt": "WF-1000XM5-1-B.webp"
+        }
+      },
+      {
+        "name": "silver",
+        "image": {
+          "src": "WF-1000XM5-1-S.webp",
+          "alt": "WF-1000XM5-1-S.webp"
+        }
+      }
+    ],
+    "images": [
+      "WF-1000XM5-1-B.webp",
+      "WF-1000XM5-2-B.webp",
+      "WF-1000XM5-3-B.webp",
+      "WF-1000XM5-4-B.webp",
+      "WF-1000XM5-5-B.webp",
+      "WF-1000XM5-6-B.webp"
+    ],
+    "tabs": {
+      "additionalInfo": {
+        "details": [
+          "Dis duis tortor sociis. Vestibulum aliquam nibh egestas metus elementum vel natoque euismod nunc mauris nibh aptent nulla eget est purus adipiscing sagittis aptent rhoncus. Platea erat tristique purus. Et luctus mi est duis, aliquet ornare. Per nec natoque. Facilisi, consectetuer phasellus imperdiet netus aenean lorem primis etiam cras odio turpis gravida dui consequat semper nunc etiam. Commodo erat montes. Vitae. Eget torquent tincidunt iaculis vivamus porta augue integer.",
+          "Porta. Ornare scelerisque sodales magna penatibus sapien quis et netus Magna cubilia molestie interdum urna cras eu odio. Hendrerit aliquet dignissim accumsan, rhoncus dignissim duis ridiculus a conubia tortor porttitor fusce.",
+          "Dis duis tortor sociis. Vestibulum aliquam nibh egestas metus elementum vel natoque euismod nunc mauris nibh aptent nulla eget est purus adipiscing sagittis aptent rhoncus. Platea erat tristique purus. Et luctus mi est duis, aliquet ornare. Per nec natoque. Facilisi, consectetuer phasellus imperdiet netus aenean lorem primis etiam cras odio turpis gravida dui consequat semper nunc etiam. Commodo erat montes. Vitae. Eget torquent tincidunt iaculis vivamus porta augue integer."
+        ],
+        "specifications": [
+          {
+            "label": "Battery",
+            "items": [
+              {
+                "label": "BATTERY LIFE (CONTINUOUS COMMUNICATION TIME)",
+                "value": "Max. 6 hrs (NC ON) | Max. 7 hrs (NC OFF)"
+              },
+              {
+                "label": "Battery Charge Method",
+                "value": "USB charger | Wireless charger (with case)"
+              },
+              {
+                "label": "General Features (Active Headphones)",
+                "value": "Max. 8 hrs (NC ON) | Max. 12 hrs (NC OFF)"
+              }
+            ]
+          },
+          {
+            "label": "Bluetooth® Specification",
+            "items": [
+              {
+                "label": "Bluetooth® version",
+                "value": "Bluetooth Specification Version 5.3"
+              },
+              {
+                "label": "Effective Range",
+                "value": "10 m"
+              },
+              {
+                "label": "Frequency Range",
+                "value": "2.4 GHz band (2.4000 GHz - 2.4835 GHz)"
+              },
+              {
+                "label": "Profile",
+                "value": "A2DP, AVRCP, HFP, HSP, TMAP, CSIP, MCP, VCP, CCP"
+              },
+              {
+                "label": "Supported Audio Format(s)",
+                "value": "SBC, AAC, LDAC, LC3"
+              },
+              {
+                "label": "Supported Content Protection",
+                "value": "SCMS-T"
+              }
+            ]
+          },
+          {
+            "label": "Charging Case",
+            "items": [
+              {
+                "label": "Dimension",
+                "value": "Approx. 64.6 x 40.0 x 26.5 mm"
+              },
+              {
+                "label": "Weight",
+                "value": "Approx. 39 g"
+              }
+            ]
+          },
+          {
+            "label": "General Features",
+            "items": [
+              {
+                "label": "Driver Unit",
+                "value": "8.4 mm"
+              },
+              {
+                "label": "Frequency Response (Bluetooth® Communication)",
+                "value": "20–20,000 Hz (44.1 kHz sampling) | 20–40,000 Hz (LDAC 96 kHz sampling 990 kbps)"
+              },
+              {
+                "label": "Headphone Type",
+                "value": "Closed, dynamic"
+              },
+              {
+                "label": "Wearing Style",
+                "value": "Yes (IPX4 equivalent)"
+              },
+              {
+                "label": "Ambient Sound Mode",
+                "value": "Yes"
+              },
+              {
+                "label": "General Features(Active Headphones)",
+                "value": "Yes"
+              }
+            ]
+          },
+          {
+            "label": "Noise Canceling",
+            "items": [
+              {
+                "label": "Ambient Sound Mode",
+                "value": "Yes"
+              },
+              {
+                "label": "Quick Attention",
+                "value": "Yes"
+              }
+            ]
+          },
+          {
+            "label": "Size & Weight",
+            "items": [
+              {
+                "label": "Weight",
+                "value": "Approx. 5.9 g x 2 (including earbud tips (M))"
+              }
+            ]
+          }
+        ]
+      },
+      "reviews": [
+        {
+          "id": 1,
+          "profile": {
+            "image": {
+              "src": "avatar.png",
+              "alt": "avatar"
+            },
+            "name": "Nicolas Jensen"
+          },
+          "rating": 5,
+          "comment": "I bought it 3 weeks ago and now come back just to say “Awesome Product”. I really enjoy it. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupt et quas molestias excepturi sint non provident."
+        },
+        {
+          "id": 2,
+          "profile": {
+            "image": {
+              "src": "avatar.png",
+              "alt": "avatar"
+            },
+            "name": "Budi Pekerti Luhut"
+          },
+          "rating": 1,
+          "comment": "I bought it 3 weeks ago and now come back just to say “Awesome Product”. I really enjoy it. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupt et quas molestias excepturi sint non provident."
+        },
+        {
+          "id": 3,
+          "profile": {
+            "image": {
+              "src": "avatar.png",
+              "alt": "avatar"
+            },
+            "name": "Agus Bengkel"
+          },
+          "rating": 4,
+          "comment": "I bought it 3 weeks ago and now come back just to say “Awesome Product”. I really enjoy it. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupt et quas molestias excepturi sint non provident."
+        }
+      ]
+    }
+  }
+]
