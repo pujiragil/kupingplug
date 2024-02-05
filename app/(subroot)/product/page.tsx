@@ -1,24 +1,41 @@
 // package
-import Image from "next/image";
 import { MinusIcon, PlusIcon } from "lucide-react";
 
 // layouts
 import SectionLayout from "@/layouts/sectionLayout";
 
+// types
+import { Product } from "@/types/product";
+
+// lib
+import { formatCurrency } from "@/lib/utils";
+
 // ui
-import { DropdownIcon, StarIcon, WishlistIcon } from "@/ui/assets/svg";
+import { StarIcon, WishlistIcon } from "@/ui/assets/svg";
 import Button from "@/ui/button";
 import ProductSlider from "@/ui/slider/productSlider";
 import ProductTab from "@/app/(subroot)/product/productTab";
+import ProductVariant from "@/app/(subroot)/product/productVariant";
 import ProductRecommendation from "@/app/(subroot)/product/productRecommendation";
 
-export default function Page() {
+async function getProductById() {
+  const res = await fetch("http://localhost:3000/api/product/WF-1000XM5", {
+    cache: "no-store",
+  });
+  if (!res.ok) throw new Error("Failed to fetch product");
+
+  return res.json();
+}
+
+export default async function Page() {
+  const product: Product = await getProductById();
+
   return (
     <SectionLayout>
       <div className="mx-auto space-y-6 p-8 lg:space-y-16">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(min-content,_400px)_1fr_280px]">
           <div className="relative h-full w-full">
-            <ProductSlider />
+            <ProductSlider images={product.images} />
           </div>
 
           <div className="mx-auto max-w-[420px] md:max-w-[520px] lg:max-w-none">
@@ -38,17 +55,17 @@ export default function Page() {
               </div>
 
               <h1 className="font-poppins text-[40px] font-medium text-[#141718]">
-                Bose QuietComfort Headphones
+                {product.name}
               </h1>
 
               <p className="font-inter text-base font-normal text-[#6C7275]">
-                Buy one or buy a few and make every space where you sit more
-                convenient. Light and easy to move around with removable tray
-                top, handy for serving snacks.
+                {product.description}
               </p>
 
               <p className="font-poppins text-[28px] font-medium text-[#141718]">
-                <span className="align-middle">$199.00</span>
+                <span className="align-middle">
+                  {formatCurrency(product.price)}
+                </span>
                 <span className="ml-3 align-middle text-xl text-[#6C7275] line-through decoration-2">
                   $400.00
                 </span>
@@ -106,56 +123,7 @@ export default function Page() {
                 </p>
               </div>
 
-              <div className="space-y-2">
-                <p className="font-inter text-base font-semibold text-[#6C7275]">
-                  Choose Color
-                </p>
-
-                <div className="space-y-4">
-                  <p className="font-inter text-xl font-normal text-[#141718]">
-                    Black
-                  </p>
-
-                  <div className="flex-no-wrap flex gap-2 overflow-x-scroll">
-                    <div className="h-[70px] w-[70px] flex-none overflow-hidden border border-[#141718]">
-                      <Image
-                        width={231}
-                        height={308}
-                        src="/images/sumplekuping-1.png"
-                        alt="sumplekuping"
-                        className="h-full w-full object-cover object-center"
-                      />
-                    </div>
-                    <div className="h-[70px] w-[70px] flex-none overflow-hidden border border-transparent">
-                      <Image
-                        width={231}
-                        height={308}
-                        src="/images/sumplekuping-1.png"
-                        alt="sumplekuping"
-                        className="h-full w-full object-cover object-center"
-                      />
-                    </div>
-                    <div className="h-[70px] w-[70px] flex-none overflow-hidden border border-transparent">
-                      <Image
-                        width={231}
-                        height={308}
-                        src="/images/sumplekuping-1.png"
-                        alt="sumplekuping"
-                        className="h-full w-full object-cover object-center"
-                      />
-                    </div>
-                    <div className="h-[70px] w-[70px] flex-none overflow-hidden border border-transparent">
-                      <Image
-                        width={231}
-                        height={308}
-                        src="/images/sumplekuping-1.png"
-                        alt="sumplekuping"
-                        className="h-full w-full object-cover object-center"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <ProductVariant variants={product.variants} />
             </div>
 
             <div className="space-y-4 border-b border-[#E8ECEF] py-6 lg:hidden">
@@ -205,7 +173,16 @@ export default function Page() {
               </div>
               <div className="grid grid-cols-[100px_1fr] font-inter text-xs lg:grid-cols-[140px_1fr] lg:text-sm">
                 <span className="text-[#6C7275]">CATEGORY</span>
-                <span className="text-[#141718]">Headphones, Wireless</span>
+                <span className="text-[#141718]">
+                  {product.categories.map((category) => (
+                    <span
+                      key={category}
+                      className="after:ml-0.5 after:mr-1 after:content-[','] last:after:mx-0 last:after:content-['']"
+                    >
+                      {category}
+                    </span>
+                  ))}
+                </span>
               </div>
             </div>
           </div>
@@ -252,211 +229,8 @@ export default function Page() {
           </div>
         </div>
 
-        <ProductTab />
+        <ProductTab tabs={product.tabs} />
         <ProductRecommendation />
-        {/* <div className="mx-auto max-w-[420px] space-y-10 md:max-w-[520px] lg:max-w-none">
-          <div className="flex flex-col lg:flex-row lg:gap-10">
-            <div className="flex items-center justify-between border-b border-[#6C7275] pb-2 lg:border-none lg:p-0">
-              <p className="font-inter text-lg font-medium text-[#6C7275]">
-                Additional Info
-              </p>
-              <DropdownIcon stroke="#6C7275" className="h-6 w-6 lg:hidden" />
-            </div>
-            <div className="flex items-center justify-between border-b border-[#6C7275] pb-2 lg:border-none lg:p-0">
-              <p className="font-inter text-lg font-medium text-[#6C7275]">
-                Questions
-              </p>
-              <DropdownIcon stroke="#6C7275" className="h-6 w-6 lg:hidden" />
-            </div>
-            <div className="flex items-center justify-between border-b border-[#141718] pb-2 lg:border-none lg:p-0">
-              <p className="font-inter text-lg font-medium text-[#141718]">
-                Reviews (11)
-              </p>
-              <DropdownIcon
-                stroke="#141718"
-                className="h-6 w-6 rotate-180 lg:hidden"
-              />
-            </div>
-          </div>
-          <div className="space-y-10">
-            <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-              <p className="font-poppins text-[28px] font-medium text-[#141718]">
-                11 Reviews
-              </p>
-
-              <div className="flex items-center justify-between rounded-lg border-2 border-[#E8ECEF] p-2 pl-4  lg:w-64">
-                <p className="font-inter text-base font-semibold text-[#141718]">
-                  Newest
-                </p>
-                <DropdownIcon stroke="#6C7275" className="h-6 w-6" />
-              </div>
-            </div>
-
-            <div className="space-y-6">
-              <div className="space-y-4 border-b border-[#E8ECEF] pb-4">
-                <div className="flex items-center gap-4">
-                  <Image
-                    width={72}
-                    height={72}
-                    src="/images/avatar.png"
-                    alt="avatar"
-                    className="h-[72px] w-[72px] rounded-full object-cover object-center"
-                  />
-
-                  <div className="space-y-4">
-                    <p className="font-inter text-xl font-semibold text-[#141718]">
-                      Nicolas Jensen
-                    </p>
-                    <div className="flex items-center gap-1">
-                      <StarIcon fill="#141718" className="h-4 w-4" />
-                      <StarIcon fill="#141718" className="h-4 w-4" />
-                      <StarIcon fill="#141718" className="h-4 w-4" />
-                      <StarIcon fill="#141718" className="h-4 w-4" />
-                      <StarIcon fill="#141718" className="h-4 w-4" />
-                    </div>
-                  </div>
-                </div>
-                <p className="font-inter text-base font-normal text-[#353945] lg:pl-[88px]">
-                  I bought it 3 weeks ago and now come back just to say “Awesome
-                  Product”. I really enjoy it. At vero eos et accusamus et iusto
-                  odio dignissimos ducimus qui blanditiis praesentium voluptatum
-                  deleniti atque corrupt et quas molestias excepturi sint non
-                  provident.
-                </p>
-              </div>
-              <div className="space-y-4 border-b border-[#E8ECEF] pb-4">
-                <div className="flex items-center gap-4">
-                  <Image
-                    width={72}
-                    height={72}
-                    src="/images/avatar.png"
-                    alt="avatar"
-                    className="h-[72px] w-[72px] rounded-full object-cover object-center"
-                  />
-
-                  <div className="space-y-4">
-                    <p className="font-inter text-xl font-semibold text-[#141718]">
-                      Nicolas Jensen
-                    </p>
-                    <div className="flex items-center gap-1">
-                      <StarIcon fill="#141718" className="h-4 w-4" />
-                      <StarIcon fill="#141718" className="h-4 w-4" />
-                      <StarIcon fill="#141718" className="h-4 w-4" />
-                      <StarIcon fill="#141718" className="h-4 w-4" />
-                      <StarIcon fill="#141718" className="h-4 w-4" />
-                    </div>
-                  </div>
-                </div>
-                <p className="font-inter text-base font-normal text-[#353945] lg:pl-[88px]">
-                  I bought it 3 weeks ago and now come back just to say “Awesome
-                  Product”. I really enjoy it. At vero eos et accusamus et iusto
-                  odio dignissimos ducimus qui blanditiis praesentium voluptatum
-                  deleniti atque corrupt et quas molestias excepturi sint non
-                  provident.
-                </p>
-              </div>
-              <div className="space-y-4 border-b border-[#E8ECEF] pb-4">
-                <div className="flex items-center gap-4">
-                  <Image
-                    width={72}
-                    height={72}
-                    src="/images/avatar.png"
-                    alt="avatar"
-                    className="h-[72px] w-[72px] rounded-full object-cover object-center"
-                  />
-
-                  <div className="space-y-4">
-                    <p className="font-inter text-xl font-semibold text-[#141718]">
-                      Nicolas Jensen
-                    </p>
-                    <div className="flex items-center gap-1">
-                      <StarIcon fill="#141718" className="h-4 w-4" />
-                      <StarIcon fill="#141718" className="h-4 w-4" />
-                      <StarIcon fill="#141718" className="h-4 w-4" />
-                      <StarIcon fill="#141718" className="h-4 w-4" />
-                      <StarIcon fill="#141718" className="h-4 w-4" />
-                    </div>
-                  </div>
-                </div>
-                <p className="font-inter text-base font-normal text-[#353945] lg:pl-[88px]">
-                  I bought it 3 weeks ago and now come back just to say “Awesome
-                  Product”. I really enjoy it. At vero eos et accusamus et iusto
-                  odio dignissimos ducimus qui blanditiis praesentium voluptatum
-                  deleniti atque corrupt et quas molestias excepturi sint non
-                  provident.
-                </p>
-              </div>
-              <div className="space-y-4 border-b border-[#E8ECEF] pb-4">
-                <div className="flex items-center gap-4">
-                  <Image
-                    width={72}
-                    height={72}
-                    src="/images/avatar.png"
-                    alt="avatar"
-                    className="h-[72px] w-[72px] rounded-full object-cover object-center"
-                  />
-
-                  <div className="space-y-4">
-                    <p className="font-inter text-xl font-semibold text-[#141718]">
-                      Nicolas Jensen
-                    </p>
-                    <div className="flex items-center gap-1">
-                      <StarIcon fill="#141718" className="h-4 w-4" />
-                      <StarIcon fill="#141718" className="h-4 w-4" />
-                      <StarIcon fill="#141718" className="h-4 w-4" />
-                      <StarIcon fill="#141718" className="h-4 w-4" />
-                      <StarIcon fill="#141718" className="h-4 w-4" />
-                    </div>
-                  </div>
-                </div>
-                <p className="font-inter text-base font-normal text-[#353945] lg:pl-[88px]">
-                  I bought it 3 weeks ago and now come back just to say “Awesome
-                  Product”. I really enjoy it. At vero eos et accusamus et iusto
-                  odio dignissimos ducimus qui blanditiis praesentium voluptatum
-                  deleniti atque corrupt et quas molestias excepturi sint non
-                  provident.
-                </p>
-              </div>
-              <div className="space-y-4 border-b border-[#E8ECEF] pb-4">
-                <div className="flex items-center gap-4">
-                  <Image
-                    width={72}
-                    height={72}
-                    src="/images/avatar.png"
-                    alt="avatar"
-                    className="h-[72px] w-[72px] rounded-full object-cover object-center"
-                  />
-
-                  <div className="space-y-4">
-                    <p className="font-inter text-xl font-semibold text-[#141718]">
-                      Nicolas Jensen
-                    </p>
-                    <div className="flex items-center gap-1">
-                      <StarIcon fill="#141718" className="h-4 w-4" />
-                      <StarIcon fill="#141718" className="h-4 w-4" />
-                      <StarIcon fill="#141718" className="h-4 w-4" />
-                      <StarIcon fill="#141718" className="h-4 w-4" />
-                      <StarIcon fill="#141718" className="h-4 w-4" />
-                    </div>
-                  </div>
-                </div>
-                <p className="font-inter text-base font-normal text-[#353945] lg:pl-[88px]">
-                  I bought it 3 weeks ago and now come back just to say “Awesome
-                  Product”. I really enjoy it. At vero eos et accusamus et iusto
-                  odio dignissimos ducimus qui blanditiis praesentium voluptatum
-                  deleniti atque corrupt et quas molestias excepturi sint non
-                  provident.
-                </p>
-              </div>
-
-              <div className="flex justify-center">
-                <button className="rounded-full border border-[#141718] px-10 py-2 font-inter text-base font-medium text-[#141718]">
-                  Load more
-                </button>
-              </div>
-            </div>
-          </div>
-        </div> */}
       </div>
     </SectionLayout>
   );
