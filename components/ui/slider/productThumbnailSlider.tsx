@@ -59,9 +59,6 @@ const ProductThumbnailSlider: React.FC<ProductThumbnailSLiderProps> = ({
         perView: "auto",
         spacing: 16,
       },
-      created() {
-        console.log("created");
-      },
     },
     [ThumbnailPlugin(thumbnailInstanceRef)],
   );
@@ -71,7 +68,7 @@ const ProductThumbnailSlider: React.FC<ProductThumbnailSLiderProps> = ({
       {products.map((product) => (
         <div
           key={product}
-          className="keen-slider__slide flex max-h-[70px] min-h-[70px] min-w-[70px] max-w-[70px] items-center justify-center border border-transparent"
+          className="keen-slider__slide flex max-h-[70px] min-h-[70px] min-w-[70px] max-w-[70px] cursor-pointer items-center justify-center border border-transparent p-1"
         >
           <Image
             width={231}

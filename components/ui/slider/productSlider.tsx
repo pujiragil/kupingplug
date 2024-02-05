@@ -15,17 +15,6 @@ import { cn } from "@/lib/utils";
 // css
 import "keen-slider/keen-slider.min.css";
 
-const images = [
-  "sumplekuping-1.png",
-  "sumplekuping-2.png",
-  "sumplekuping-3.png",
-  "sumplekuping-4.png",
-  "sumplekuping-5.png",
-  "sumplekuping-6.png",
-  "sumplekuping-7.png",
-  "sumplekuping-8.png",
-];
-
 interface ProductNavigationButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   position: "right" | "left";
@@ -57,7 +46,7 @@ const ProductNavigationButton: React.FC<ProductNavigationButtonProps> = ({
   );
 };
 
-const ProductSlider = () => {
+const ProductSlider = ({ images }: { images: string[] }) => {
   const [currentSlide, setCurrentSlide] = useState<number>(0);
   const [loaded, setLoaded] = useState<boolean>(false);
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
@@ -75,19 +64,25 @@ const ProductSlider = () => {
       <div className="relative flex w-full overflow-hidden">
         <div
           ref={sliderRef}
-          className="keen-slider h-[420px] w-full lg:h-[400px]"
+          className="keen-slider h-[420px] w-full bg-[#F3F5F7] lg:h-[400px]"
         >
-          {images.map((image) => (
+          {images.map((image, idx, array) => (
             <div
               key={image}
-              className="keen-slider__slide flex items-center justify-center bg-[#F3F5F7]"
+              className="keen-slider__slide flex items-center justify-center"
             >
               <Image
+                quality={100}
                 width={231}
                 height={308}
                 src={`/images/${image}`}
                 alt="sumplekuping"
-                className="h-full w-auto object-cover"
+                className={cn(
+                  "h-full w-full",
+                  idx === array.length - 1
+                    ? "object-cover"
+                    : "object-scale-down",
+                )}
               />
             </div>
           ))}

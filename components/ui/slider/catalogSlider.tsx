@@ -13,6 +13,7 @@ import products from "@/data/product.json";
 // css
 import "keen-slider/keen-slider.min.css";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import Link from "next/link";
 
 export default function CatalogSlider() {
   const [currentSlide, setCurrentSlide] = useState<number>(0);
@@ -84,14 +85,18 @@ export default function CatalogSlider() {
                   <ProductCard.WishlistButton />
                 </ProductCard.ThumbnailBadge>
 
-                <ProductCard.Image />
+                <Link href="/product">
+                  <ProductCard.Image />
+                </Link>
               </ProductCard.Thumbnail>
 
-              <ProductCard.Content>
-                <ProductCard.Ratings />
-                <ProductCard.Name />
-                <ProductCard.Price />
-              </ProductCard.Content>
+              <Link href="/product">
+                <ProductCard.Content>
+                  <ProductCard.Ratings />
+                  <ProductCard.Name />
+                  <ProductCard.Price />
+                </ProductCard.Content>
+              </Link>
             </ProductCard.Root>
           </div>
         ))}
