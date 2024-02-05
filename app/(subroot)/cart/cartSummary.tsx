@@ -5,6 +5,7 @@ import { useState } from "react";
 
 // lib
 import { cn } from "@/lib/utils";
+import { useCartProductsStore } from "@/stores/zustand";
 
 const cartSelectMenus: CartSelectItemProps["data"][] = [
   {
@@ -25,6 +26,7 @@ const cartSelectMenus: CartSelectItemProps["data"][] = [
 ];
 
 const CartSummary = () => {
+  const total = useCartProductsStore((state) => state.total);
   const [cartSelect, setCartSelect] = useState<string>(cartSelectMenus[0].name);
 
   const handleCartSelect = (value: string) => {
@@ -64,7 +66,7 @@ const CartSummary = () => {
               Total
             </p>
             <p className="font-poppins text-lg font-semibold text-[#141718]">
-              $120.00
+              {total}
             </p>
           </div>
         </div>

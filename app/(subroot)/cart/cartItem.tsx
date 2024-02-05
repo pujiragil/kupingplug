@@ -201,7 +201,7 @@ const CartItem: React.FC<CartItemProps> = ({ product }) => {
       >
         <DropdownMenu>
           <DropdownMenuTrigger disabled={!check} asChild>
-            <button className="h-4 w-4 disabled:cursor-not-allowed">
+            <button className="h-5 w-5 disabled:cursor-not-allowed">
               <MoreHorizontal className="h-full w-full" />
             </button>
           </DropdownMenuTrigger>

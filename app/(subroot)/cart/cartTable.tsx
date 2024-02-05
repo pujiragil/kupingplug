@@ -1,5 +1,8 @@
+"use client";
+
 // ui
 import CartItem from "@/app/(subroot)/cart/cartItem";
+import { useCartProductsStore } from "@/stores/zustand";
 
 const carts = [
   {
@@ -38,6 +41,8 @@ const carts = [
 ];
 
 const CartTable = () => {
+  const cartProducts = useCartProductsStore((state) => state.products);
+
   return (
     <table className="h-fit w-full">
       <thead className="border-b border-[#141718]">
@@ -58,7 +63,7 @@ const CartTable = () => {
       </thead>
 
       <tbody>
-        {carts.map((cart) => (
+        {cartProducts.map((cart) => (
           <tr
             key={cart.id}
             className="border-b border-[#E8ECEF] last:border-b-0"
