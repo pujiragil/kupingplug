@@ -17,15 +17,7 @@ import ProductSlider from "@/ui/slider/productSlider";
 import ProductTab from "@/app/(subroot)/product/productTab";
 import ProductVariant from "@/app/(subroot)/product/productVariant";
 import ProductRecommendation from "@/app/(subroot)/product/productRecommendation";
-
-async function getProductById() {
-  const res = await fetch("http://localhost:3000/api/product/WF-1000XM5", {
-    cache: "no-store",
-  });
-  if (!res.ok) throw new Error("Failed to fetch product");
-
-  return res.json();
-}
+import { getProductById } from "@/lib/server";
 
 export default async function Page() {
   const product: Product = await getProductById();
