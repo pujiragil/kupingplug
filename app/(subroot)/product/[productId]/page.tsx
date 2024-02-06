@@ -1,11 +1,12 @@
 // package
+import { notFound } from "next/navigation";
 import { MinusIcon, PlusIcon } from "lucide-react";
 
 // layouts
 import SectionLayout from "@/layouts/sectionLayout";
 
-// types
-import { Product } from "@/types/product";
+// data
+import products from "@/data/dummy.json";
 
 // lib
 import { formatCurrency } from "@/lib/utils";
@@ -17,10 +18,15 @@ import ProductSlider from "@/ui/slider/productSlider";
 import ProductTab from "@/app/(subroot)/product/productTab";
 import ProductVariant from "@/app/(subroot)/product/productVariant";
 import ProductRecommendation from "@/app/(subroot)/product/productRecommendation";
-import { getProductById } from "@/lib/server";
 
-export default async function Page() {
-  const product: Product = await getProductById();
+export default async function Page({
+  params,
+}: {
+  params: { productId: string };
+}) {
+  const product = products.find((product) => product.id === params.productId);
+
+  if (!product) return notFound();
 
   return (
     <SectionLayout>
