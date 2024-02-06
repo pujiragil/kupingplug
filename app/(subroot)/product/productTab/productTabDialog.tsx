@@ -11,7 +11,7 @@ const ProductTabDialog = ({
   return (
     <Dialog>
       <DialogTrigger asChild>{trigger}</DialogTrigger>
-      <DialogContent className="max-h-[90vh] overflow-y-scroll md:max-h-[50vh] md:max-w-[80vw] lg:max-h-[90vh] lg:max-w-[986px]">
+      <DialogContent className="z-[110] max-h-[90vh] overflow-y-scroll md:max-h-[50vh] md:max-w-[80vw] lg:max-h-[90vh] lg:max-w-[986px]">
         {children}
       </DialogContent>
     </Dialog>
