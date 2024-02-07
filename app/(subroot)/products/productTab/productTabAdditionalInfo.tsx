@@ -2,7 +2,7 @@
 import { ProductAdditionalInfo } from "@/types/product";
 
 // ui
-import ProductTabDialog from "@/app/(subroot)/product/productTab/productTabDialog";
+import ProductTabDialog from "@/app/(subroot)/products/productTab/productTabDialog";
 
 const ProductTabAdditionalInfo = ({
   data,

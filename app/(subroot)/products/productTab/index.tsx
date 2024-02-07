@@ -10,8 +10,8 @@ import { ProductTabs } from "@/types/product";
 import Text from "@/ui/text";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/ui/tabs";
 import { DropdownIcon } from "@/ui/assets/svg";
-import ProductTabAdditionalInfo from "@/app/(subroot)/product/productTab/productTabAdditionalInfo";
-import ProductTabReviews from "@/app/(subroot)/product/productTab/productTabReviews";
+import ProductTabAdditionalInfo from "@/app/(subroot)/products/productTab/productTabAdditionalInfo";
+import ProductTabReviews from "@/app/(subroot)/products/productTab/productTabReviews";
 
 const productTabs = [
   {

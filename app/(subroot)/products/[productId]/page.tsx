@@ -15,18 +15,27 @@ import { formatCurrency } from "@/lib/utils";
 import { StarIcon, WishlistIcon } from "@/ui/assets/svg";
 import Button from "@/ui/button";
 import ProductSlider from "@/ui/slider/productSlider";
-import ProductTab from "@/app/(subroot)/product/productTab";
-import ProductVariant from "@/app/(subroot)/product/productVariant";
-import ProductRecommendation from "@/app/(subroot)/product/productRecommendation";
+import ProductTab from "@/app/(subroot)/products/productTab";
+import ProductVariant from "@/app/(subroot)/products/productVariant";
+import ProductRecommendation from "@/app/(subroot)/products/productRecommendation";
+import { Product } from "@/types/product";
+
+async function getProductById(productId: string) {
+  const res = await fetch(
+    `https://kupingplug.vercel.app/api/product/${productId}`,
+  );
+
+  if (res.status === 404) return notFound();
+
+  return res.json();
+}
 
 export default async function Page({
   params,
 }: {
   params: { productId: string };
 }) {
-  const product = products.find((product) => product.id === params.productId);
-
-  if (!product) return notFound();
+  const product: Product = await getProductById(params.productId);
 
   return (
     <SectionLayout>
