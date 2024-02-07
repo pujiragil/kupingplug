@@ -5,9 +5,6 @@ import { MinusIcon, PlusIcon } from "lucide-react";
 // layouts
 import SectionLayout from "@/layouts/sectionLayout";
 
-// data
-import products from "@/data/dummy.json";
-
 // lib
 import { formatCurrency } from "@/lib/utils";
 
@@ -22,7 +19,7 @@ import { Product } from "@/types/product";
 
 async function getProductById(productId: string) {
   const res = await fetch(
-    `https://kupingplug.vercel.app/api/product/${productId}`,
+    `https://kupingplug.vercel.app/api/products/${productId}`,
   );
 
   if (res.status === 404) return notFound();
